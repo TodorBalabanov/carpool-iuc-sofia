@@ -17,23 +17,39 @@
 </head>
 
 <body>
-  <h1>Carpool IUC Sofia - About</h1>
+<h1>Carpool IUC Sofia - Search Trip</h1>
   <table border="0">
     <tr>
       <td><a href="index.html">Home</a></td>
       <td><a href="post_trip.html">Post Trip</a></td>
-      <td><a href="search_trip.html">Search Trip</a></td>
+      <td>Search Trip</td>
       <td><a href="register.html">Register</a></td>
       <td><a href="login.html">Login</a></td>
-      <td>About</td>
+      <td><a href="about.html">About</a></td>
       <td><a href="contacts.html">Contacts</a></td>
     </tr>
   </table>
 
   </p>
 
-Internet based carpool system developed at International University College Sofia is part of education tutorials in few subjects as Multimedia, Databeses, Software Development and E-Business.
-
+  <form action="" method="post">
+	  <table border="0">
+		 <tr>
+		   <td align="right">From Location:</td>
+		   <td><input type="text" name="from" id="from"/></td>
+		 </tr>
+		 <tr>
+		   <td align="right">To Location:</td>
+		   <td><input type="text" name="to" id="to"/></td>
+		 </tr>
+		 <tr>
+		   <td align="right">Departure Date:</td>
+			<!-- TODO Replace with calendar control! --->
+		   <td><input type="text" name="date" id="date"/></td>
+		 </tr>
+	  </table>
+     <input type="submit" value="Search" name="search" id="search"/>
+  </form>
 </body>
 </html>
 
