@@ -1,0 +1,53 @@
+body {
+ color: red;
+ background-color: #afafff;
+ font-family: Georgia, "Times New Roman", Times, serif;
+ padding-top: 2em;
+ padding-left: 1em;
+}
+
+body a {
+ text-decoration: none;
+}
+
+body a:link {
+ color: purple;
+}
+
+body a:visited {
+ color: purple;
+}
+
+h1 {
+ font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+}
+
+table.navigation {
+ position: absolute;
+ top: 1em;
+ left: 1em;
+ width: 50em;
+ height: 0em;
+ padding: 0;
+ margin: 0;
+}
+
+table.navigation td {
+ background: blue;
+ margin: 0.0em 1;
+ padding: 0.5em;
+ border-right: 1em solid #00007f;
+}
+
+table.navigation a {
+ text-decoration: none;
+}
+
+table.navigation a:link {
+ color: purple;
+}
+
+table.navigation a:visited {
+ color: purple;
+}
+
