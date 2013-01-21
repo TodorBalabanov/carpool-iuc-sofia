@@ -1,0 +1,526 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.2.2
+-- Dumped by pg_dump version 9.2.2
+-- Started on 2013-01-20 02:49:34
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 2011 (class 1262 OID 16384)
+-- Name: Carpool; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE "Carpool" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'English_United States.1252' LC_CTYPE = 'English_United States.1252';
+
+
+ALTER DATABASE "Carpool" OWNER TO postgres;
+
+\connect "Carpool"
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 187 (class 3079 OID 11727)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 2014 (class 0 OID 0)
+-- Dependencies: 187
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+--
+-- TOC entry 175 (class 1259 OID 16435)
+-- Name: brand_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE brand_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.brand_id_seq OWNER TO postgres;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 174 (class 1259 OID 16432)
+-- Name: brand; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE brand (
+    id integer DEFAULT nextval('brand_id_seq'::regclass) NOT NULL,
+    name character varying(255) NOT NULL
+);
+
+
+ALTER TABLE public.brand OWNER TO postgres;
+
+--
+-- TOC entry 178 (class 1259 OID 16453)
+-- Name: car_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE car_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.car_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 179 (class 1259 OID 16455)
+-- Name: car; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE car (
+    id integer DEFAULT nextval('car_id_seq'::regclass) NOT NULL,
+    model_id integer NOT NULL,
+    driver_id integer NOT NULL,
+    registration character varying(255) NOT NULL,
+    color integer NOT NULL
+);
+
+
+ALTER TABLE public.car OWNER TO postgres;
+
+--
+-- TOC entry 171 (class 1259 OID 16406)
+-- Name: driver_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE driver_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.driver_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 170 (class 1259 OID 16396)
+-- Name: driver; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE driver (
+    id integer DEFAULT nextval('driver_id_seq'::regclass) NOT NULL,
+    license character varying(255) NOT NULL,
+    person_id integer NOT NULL
+);
+
+
+ALTER TABLE public.driver OWNER TO postgres;
+
+--
+-- TOC entry 183 (class 1259 OID 16489)
+-- Name: location_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE location_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.location_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 182 (class 1259 OID 16484)
+-- Name: location; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE location (
+    id integer DEFAULT nextval('location_id_seq'::regclass) NOT NULL,
+    name character varying(255) NOT NULL
+);
+
+
+ALTER TABLE public.location OWNER TO postgres;
+
+--
+-- TOC entry 177 (class 1259 OID 16443)
+-- Name: model_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE model_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.model_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 176 (class 1259 OID 16440)
+-- Name: model; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE model (
+    id integer DEFAULT nextval('model_id_seq'::regclass) NOT NULL,
+    name character varying(255) NOT NULL,
+    brand_id integer NOT NULL
+);
+
+
+ALTER TABLE public.model OWNER TO postgres;
+
+--
+-- TOC entry 172 (class 1259 OID 16414)
+-- Name: passenger_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE passenger_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.passenger_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 173 (class 1259 OID 16416)
+-- Name: passenger; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE passenger (
+    id integer DEFAULT nextval('passenger_id_seq'::regclass) NOT NULL,
+    passport character varying(255) NOT NULL,
+    person_id integer NOT NULL
+);
+
+
+ALTER TABLE public.passenger OWNER TO postgres;
+
+--
+-- TOC entry 169 (class 1259 OID 16393)
+-- Name: person_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE person_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.person_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 168 (class 1259 OID 16385)
+-- Name: person; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE person (
+    id integer DEFAULT nextval('person_id_seq'::regclass) NOT NULL,
+    first_name character varying(255) NOT NULL,
+    last_name character varying(255) NOT NULL,
+    phone character varying(255) NOT NULL,
+    email character varying(255) NOT NULL,
+    password character varying(255) NOT NULL,
+    smoker boolean NOT NULL,
+    notes text NOT NULL
+);
+
+
+ALTER TABLE public.person OWNER TO postgres;
+
+--
+-- TOC entry 184 (class 1259 OID 16507)
+-- Name: travelers_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE travelers_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.travelers_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 185 (class 1259 OID 16509)
+-- Name: travelers; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE travelers (
+    id integer DEFAULT nextval('travelers_id_seq'::regclass) NOT NULL,
+    trip_id integer NOT NULL,
+    person_id integer NOT NULL
+);
+
+
+ALTER TABLE public.travelers OWNER TO postgres;
+
+--
+-- TOC entry 180 (class 1259 OID 16471)
+-- Name: trip_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE trip_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.trip_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 181 (class 1259 OID 16473)
+-- Name: trip; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE trip (
+    id integer DEFAULT nextval('trip_id_seq'::regclass) NOT NULL,
+    car_id integer NOT NULL,
+    start_location_id integer NOT NULL,
+    end_location_id integer NOT NULL,
+    departure timestamp without time zone NOT NULL,
+    places integer NOT NULL,
+    free boolean NOT NULL,
+    paid boolean NOT NULL
+);
+
+
+ALTER TABLE public.trip OWNER TO postgres;
+
+--
+-- TOC entry 186 (class 1259 OID 16525)
+-- Name: trips_view; Type: VIEW; Schema: public; Owner: postgres
+--
+
+CREATE VIEW trips_view AS
+    SELECT t.id, p.first_name, p.last_name, p.phone, l.name AS start_location, ll.name AS end_location, t.departure FROM trip t, driver d, person p, location l, location ll, travelers tr WHERE ((((((tr.trip_id = t.id) AND (tr.person_id = p.id)) AND (tr.person_id = d.id)) AND (t.start_location_id = l.id)) AND (t.end_location_id = ll.id)) AND (t.places > 0));
+
+
+ALTER TABLE public.trips_view OWNER TO postgres;
+
+--
+-- TOC entry 1986 (class 2606 OID 16439)
+-- Name: brand_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY brand
+    ADD CONSTRAINT brand_pk PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1990 (class 2606 OID 16460)
+-- Name: car_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY car
+    ADD CONSTRAINT car_pk PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1982 (class 2606 OID 16400)
+-- Name: driver_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY driver
+    ADD CONSTRAINT driver_pk PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1994 (class 2606 OID 16488)
+-- Name: location_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY location
+    ADD CONSTRAINT location_pk PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1988 (class 2606 OID 16447)
+-- Name: model_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY model
+    ADD CONSTRAINT model_pk PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1984 (class 2606 OID 16420)
+-- Name: passenger_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY passenger
+    ADD CONSTRAINT passenger_pk PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1980 (class 2606 OID 16392)
+-- Name: person_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY person
+    ADD CONSTRAINT person_pk PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1996 (class 2606 OID 16514)
+-- Name: travelers_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY travelers
+    ADD CONSTRAINT travelers_pk PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1992 (class 2606 OID 16478)
+-- Name: trip_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY trip
+    ADD CONSTRAINT trip_pk PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1999 (class 2606 OID 16448)
+-- Name: brand_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY model
+    ADD CONSTRAINT brand_fk FOREIGN KEY (brand_id) REFERENCES brand(id) ON UPDATE CASCADE;
+
+
+--
+-- TOC entry 2002 (class 2606 OID 16492)
+-- Name: car_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY trip
+    ADD CONSTRAINT car_fk FOREIGN KEY (car_id) REFERENCES car(id) ON UPDATE CASCADE;
+
+
+--
+-- TOC entry 2001 (class 2606 OID 16466)
+-- Name: driver_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY car
+    ADD CONSTRAINT driver_fk FOREIGN KEY (driver_id) REFERENCES driver(id) ON UPDATE CASCADE;
+
+
+--
+-- TOC entry 2004 (class 2606 OID 16502)
+-- Name: end_location_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY trip
+    ADD CONSTRAINT end_location_fk FOREIGN KEY (end_location_id) REFERENCES location(id) ON UPDATE CASCADE;
+
+
+--
+-- TOC entry 2000 (class 2606 OID 16461)
+-- Name: model_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY car
+    ADD CONSTRAINT model_fk FOREIGN KEY (model_id) REFERENCES model(id) ON UPDATE CASCADE;
+
+
+--
+-- TOC entry 2006 (class 2606 OID 16520)
+-- Name: person_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY travelers
+    ADD CONSTRAINT person_fk FOREIGN KEY (person_id) REFERENCES person(id) ON UPDATE CASCADE;
+
+
+--
+-- TOC entry 1997 (class 2606 OID 16409)
+-- Name: person_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY driver
+    ADD CONSTRAINT person_id_fk FOREIGN KEY (person_id) REFERENCES person(id) ON UPDATE CASCADE;
+
+
+--
+-- TOC entry 1998 (class 2606 OID 16427)
+-- Name: person_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY passenger
+    ADD CONSTRAINT person_id_fk FOREIGN KEY (person_id) REFERENCES person(id) ON UPDATE CASCADE;
+
+
+--
+-- TOC entry 2003 (class 2606 OID 16497)
+-- Name: start_location_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY trip
+    ADD CONSTRAINT start_location_fk FOREIGN KEY (start_location_id) REFERENCES location(id) ON UPDATE CASCADE;
+
+
+--
+-- TOC entry 2005 (class 2606 OID 16515)
+-- Name: trip_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY travelers
+    ADD CONSTRAINT trip_fk FOREIGN KEY (trip_id) REFERENCES trip(id) ON UPDATE CASCADE;
+
+
+--
+-- TOC entry 2013 (class 0 OID 0)
+-- Dependencies: 5
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+-- Completed on 2013-01-20 02:49:34
+
+--
+-- PostgreSQL database dump complete
+--
+
