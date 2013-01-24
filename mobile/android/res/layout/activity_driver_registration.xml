@@ -1,0 +1,101 @@
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <ListView
+                android:id="@+id/drivers"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <TableLayout
+                android:id="@+id/details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:stretchColumns="1" >
+
+                <TableRow>
+
+                    <TextView android:text="@string/name_label" />
+
+                    <EditText android:id="@+id/name" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView android:text="@string/license_id_label" />
+
+                    <EditText android:id="@+id/license" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView android:text="@string/phone_label" />
+
+                    <EditText
+                        android:id="@+id/phone"
+                        android:inputType="phone" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView android:text="@string/car_brand_label" />
+
+                    <Spinner
+                        android:id="@+id/car_brand"
+                        android:entries="@array/car_brands" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="@string/car_model_label" />
+                    <EditText android:id="@+id/car_model" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView android:text="@string/car_color_label" />
+
+                    <Spinner
+                        android:id="@+id/car_color"
+                        android:entries="@array/car_colors" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="@string/notes_label" />
+
+                    <EditText
+                        android:id="@+id/notes"
+                        android:lines="2"
+                        android:maxLines="2"
+                        android:maxWidth="200sp"
+                        android:scrollHorizontally="false"
+                        android:singleLine="false" />
+
+                </TableRow>
+                
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save_label" />
+            </TableLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</TabHost>

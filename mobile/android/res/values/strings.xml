@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Carpool NBU</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_driver_registration">Driver Registration Activity</string>
+    <string name="title_activity_passenger_registration">Passenger Registration Activity</string>
+    <string name="name_label">Name:</string>
+    <string name="license_id_label">License ID:</string>
+    <string name="save_label">Save</string>
+    <string name="phone_label">Phone:</string>
+    <string name="car_brand_label">Brand:</string>
+    <string name="car_model_label">Model:</string>
+    <string name="car_color_label">Color:</string>
+    <string name="notes_label">Notes:</string>
+
+    <string-array name="car_brands">
+        <item>-</item>
+        <item>Acura</item>
+        <item>Aixam</item>
+        <item>Alfa Romeo</item>
+        <item>Alpina</item>
+        <item>Aro</item>
+        <item>Asia Motors</item>
+        <item>Aston Martin</item>
+        <item>Audi</item>
+        <item>Bentley</item>
+        <item>BMW</item>
+        <item>Bugatti</item>
+        <item>Buick</item>
+        <item>Cadillac</item>
+        <item>Chevrolet</item>
+        <item>Chrysler</item>
+        <item>Citroen</item>
+        <item>Corvette</item>
+        <item>Dacia</item>
+        <item>Daewoo</item>
+        <item>DAF</item>
+        <item>Daihatsu</item>
+        <item>Datsun</item>
+        <item>Dodge</item>
+        <item>Ferrari</item>
+        <item>Fiat</item>
+        <item>Ford</item>
+        <item>GAZ</item>
+        <item>Geo</item>
+        <item>GMC</item>
+        <item>Great wall</item>
+        <item>Honda</item>
+        <item>Hummer</item>
+        <item>Hyundai</item>
+        <item>Ikarus</item>
+        <item>Infiniti</item>
+        <item>Isuzu</item>
+        <item>Iveco</item>
+        <item>Jaguar</item>
+        <item>Jeep</item>
+        <item>Kia</item>
+        <item>Lada</item>
+        <item>Lamborghini</item>
+        <item>Lancia</item>
+        <item>Land Rover</item>
+        <item>Landwind</item>
+        <item>LDV</item>
+        <item>Lexus</item>
+        <item>Lincoln</item>
+        <item>Lotus</item>
+        <item>Maserati</item>
+        <item>Maybach</item>
+        <item>Mazda</item>
+        <item>Mercedes-Benz</item>
+        <item>MG</item>
+        <item>Mini</item>
+        <item>Mitsubishi</item>
+        <item>Morgan</item>
+        <item>Moskvich</item>
+        <item>Nissan</item>
+        <item>Oldsmobile</item>
+        <item>Opel</item>
+        <item>Peugeot</item>
+        <item>Piaggio</item>
+        <item>Plymouth</item>
+        <item>Pontiac</item>
+        <item>Porsche</item>
+        <item>Range Rover</item>
+        <item>Renault</item>
+        <item>Rolls Royce</item>
+        <item>Rover</item>
+        <item>Saab</item>
+        <item>Samand</item>
+        <item>Santana</item>
+        <item>Scion</item>
+        <item>Seat</item>
+        <item>Setra</item>
+        <item>Shuanghuan</item>
+        <item>Skoda</item>
+        <item>Smart</item>
+        <item>Ssangyong</item>
+        <item>Subaru</item>
+        <item>Suzuki</item>
+        <item>Talbot</item>
+        <item>Tata</item>
+        <item>Tempo</item>
+        <item>Temsa</item>
+        <item>Toyota</item>
+        <item>Trabant</item>
+        <item>UAZ</item>
+        <item>Varshava</item>
+        <item>VAZ</item>
+        <item>Volga</item>
+        <item>Volvo</item>
+        <item>Vromos</item>
+        <item>VW</item>
+        <item>Wartburg</item>
+        <item>Wiesmann</item>
+        <item>Zastava</item>
+        <item>Zaz</item>
+    </string-array>
+    <string-array name="car_colors">
+        <item>-</item>
+        <item>Aero blue</item>
+        <item>Air Force blue (RAF)</item>
+        <item>Air Force blue (USAF)</item>
+        <item>Air superiority blue</item>
+        <item>Alabama Crimson</item>
+        <item>Alice blue</item>
+        <item>Alizarin crimson</item>
+        <item>Alloy orange</item>
+        <item>Almond</item>
+        <item>Amaranth</item>
+        <item>Amazon</item>
+        <item>Amber</item>
+        <item>SAE/ECE Amber (color)</item>
+        <item>American rose</item>
+        <item>Amethyst</item>
+        <item>Android Green</item>
+        <item>Anti-flash white</item>
+        <item>Antique brass</item>
+        <item>Antique bronze</item>
+        <item>Antique fuchsia</item>
+        <item>Antique ruby</item>
+        <item>Antique white</item>
+        <item>Ao (English)</item>
+        <item>Apple green</item>
+        <item>Apricot</item>
+        <item>Aqua</item>
+        <item>Aquamarine</item>
+        <item>Army green</item>
+        <item>Arsenic</item>
+        <item>Arylide yellow</item>
+        <item>Ash grey</item>
+        <item>Asparagus</item>
+        <item>Atomic tangerine</item>
+        <item>Auburn</item>
+        <item>Aureolin</item>
+        <item>AuroMetalSaurus</item>
+        <item>Avocado</item>
+        <item>Azure</item>
+        <item>Azure mist/web</item>
+        <item>Baby blue</item>
+        <item>Baby blue eyes</item>
+        <item>Baby pink</item>
+        <item>Baby powder</item>
+        <item>Baker-Miller pink</item>
+        <item>Ball Blue</item>
+        <item>Banana Mania</item>
+        <item>Banana yellow</item>
+        <item>Barn red</item>
+        <item>Battleship grey</item>
+        <item>Bazaar</item>
+        <item>Beau blue</item>
+        <item>Beaver</item>
+        <item>Beige</item>
+        <item>Bdazzled Blue</item>
+        <item>Big dipruby</item>
+        <item>Bisque</item>
+        <item>Bistre</item>
+        <item>Bistre brown</item>
+        <item>Bitter lemon</item>
+        <item>Bitter lime</item>
+        <item>Bittersweet</item>
+        <item>Bittersweet shimmer</item>
+        <item>Black</item>
+        <item>Black bean</item>
+        <item>Black leather jacket</item>
+        <item>Black olive</item>
+        <item>Blanched Almond</item>
+        <item>Blast-off bronze</item>
+        <item>Bleu de France</item>
+        <item>Blizzard Blue</item>
+        <item>Blond</item>
+        <item>Blue</item>
+        <item>Blue (Crayola)</item>
+        <item>Blue (Munsell)</item>
+        <item>Blue (NCS)</item>
+        <item>Blue (pigment)</item>
+        <item>Blue (RYB)</item>
+        <item>Blue Bell</item>
+        <item>Blue-gray</item>
+        <item>Blue-green</item>
+        <item>Blue sapphire</item>
+        <item>Blue-violet</item>
+        <item>Blueberry</item>
+        <item>Bluebonnet</item>
+        <item>Blush</item>
+        <item>Bole</item>
+        <item>Bondi blue</item>
+        <item>Bone</item>
+        <item>Boston University Red</item>
+        <item>Bottle green</item>
+        <item>Boysenberry</item>
+        <item>Brandeis blue</item>
+        <item>Brass</item>
+        <item>Brick red</item>
+        <item>Bright cerulean</item>
+        <item>Bright green</item>
+        <item>Bright lavender</item>
+        <item>Bright maroon</item>
+        <item>Bright pink</item>
+        <item>Bright turquoise</item>
+        <item>Bright ube</item>
+        <item>Brilliant lavender</item>
+        <item>Brilliant rose</item>
+        <item>Brink pink</item>
+        <item>British racing green</item>
+        <item>Bronze</item>
+        <item>Bronze Yellow</item>
+        <item>Brown (traditional)</item>
+        <item>Brown (web)</item>
+        <item>Brown-nose</item>
+        <item>Brunswick green</item>
+        <item>Bubble gum</item>
+        <item>Bubbles</item>
+        <item>Buff</item>
+        <item>Bulgarian rose</item>
+        <item>Burgundy</item>
+        <item>Burlywood</item>
+        <item>Burnt orange</item>
+        <item>Burnt sienna</item>
+        <item>Burnt umber</item>
+        <item>Byzantine</item>
+        <item>Byzantium</item>
+        <item>Cadet</item>
+        <item>Cadet blue</item>
+        <item>Cadet grey</item>
+        <item>Cadmium green</item>
+        <item>Cadmium orange</item>
+        <item>Cadmium red</item>
+        <item>Cadmium yellow</item>
+        <item>CafГ© au lait</item>
+        <item>CafГ© noir</item>
+        <item>Cal Poly green</item>
+        <item>Cambridge Blue</item>
+        <item>Camel</item>
+        <item>Cameo pink</item>
+        <item>Camouflage green</item>
+        <item>Canary yellow</item>
+        <item>Candy apple red</item>
+        <item>Candy pink</item>
+        <item>Capri</item>
+        <item>Caput mortuum</item>
+        <item>Cardinal</item>
+        <item>Caribbean green</item>
+        <item>Carmine</item>
+        <item>Carmine (M P)</item>
+        <item>Carmine pink</item>
+        <item>Carmine red</item>
+        <item>Carnation pink</item>
+        <item>Carnelian</item>
+        <item>Carolina blue</item>
+        <item>Carrot orange</item>
+        <item>Castleton green</item>
+        <item>Catalina blue</item>
+        <item>Cedar Chest</item>
+        <item>Ceil</item>
+        <item>Celadon</item>
+        <item>Celadon Blue</item>
+        <item>Celadon Green</item>
+        <item>Celeste (colour)</item>
+        <item>Celestial blue</item>
+        <item>Cerise</item>
+        <item>Cerise pink</item>
+        <item>Cerulean</item>
+        <item>Cerulean blue</item>
+        <item>Cerulean frost</item>
+        <item>CG Blue</item>
+        <item>CG Red</item>
+        <item>Chamoisee</item>
+        <item>Champagne</item>
+        <item>Charcoal</item>
+        <item>Charleston green</item>
+        <item>Charm pink</item>
+        <item>Chartreuse (traditional)</item>
+        <item>Chartreuse (web)</item>
+        <item>Cherry</item>
+        <item>Cherry blossom pink</item>
+        <item>Chestnut</item>
+        <item>China pink</item>
+        <item>China rose</item>
+        <item>Chinese red</item>
+        <item>Chocolate (traditional)</item>
+        <item>Chocolate (web)</item>
+        <item>Chrome yellow</item>
+        <item>Cinereous</item>
+        <item>Cinnabar</item>
+        <item>Cinnamon</item>
+        <item>Citrine</item>
+        <item>Citron</item>
+        <item>Claret</item>
+        <item>Classic rose</item>
+        <item>Cobalt</item>
+        <item>Cocoa brown</item>
+        <item>Coconut</item>
+        <item>Coffee</item>
+        <item>Columbia blue</item>
+        <item>Congo pink</item>
+        <item>Cool black</item>
+        <item>Cool grey</item>
+        <item>Copper</item>
+        <item>Copper (Crayola)</item>
+        <item>Copper penny</item>
+        <item>Copper red</item>
+        <item>Copper rose</item>
+        <item>Coquelicot</item>
+        <item>Coral</item>
+        <item>Coral pink</item>
+        <item>Coral red</item>
+        <item>Cordovan</item>
+        <item>Corn</item>
+        <item>Cornell Red</item>
+        <item>Cornflower blue</item>
+        <item>Cornsilk</item>
+        <item>Cosmic latte</item>
+        <item>Cotton candy</item>
+        <item>Cream</item>
+        <item>Crimson</item>
+        <item>Crimson glory</item>
+        <item>Cyan</item>
+        <item>Cyan (process)</item>
+        <item>Cyber Grape</item>
+        <item>Daffodil</item>
+        <item>Dandelion</item>
+        <item>Dark blue</item>
+        <item>Dark blue-gray</item>
+        <item>Dark brown</item>
+        <item>Dark byzantium</item>
+        <item>Dark candy apple red</item>
+        <item>Dark cerulean</item>
+        <item>Dark chestnut</item>
+        <item>Dark coral</item>
+        <item>Dark cyan</item>
+        <item>Dark electric blue</item>
+        <item>Dark goldenrod</item>
+        <item>Dark gray</item>
+        <item>Dark green</item>
+        <item>Dark imperial blue</item>
+        <item>Dark jungle green</item>
+        <item>Dark khaki</item>
+        <item>Dark lava</item>
+        <item>Dark lavender</item>
+        <item>Dark magenta</item>
+        <item>Dark midnight blue</item>
+        <item>Dark olive green</item>
+        <item>Dark orange</item>
+        <item>Dark orchid</item>
+        <item>Dark pastel blue</item>
+        <item>Dark pastel green</item>
+        <item>Dark pastel purple</item>
+        <item>Dark pastel red</item>
+        <item>Dark pink</item>
+        <item>Dark powder blue</item>
+        <item>Dark raspberry</item>
+        <item>Dark red</item>
+        <item>Dark salmon</item>
+        <item>Dark scarlet</item>
+        <item>Dark sea green</item>
+        <item>Dark sienna</item>
+        <item>Dark slate blue</item>
+        <item>Dark slate gray</item>
+        <item>Dark spring green</item>
+        <item>Dark tan</item>
+        <item>Dark tangerine</item>
+        <item>Dark taupe</item>
+        <item>Dark terra cotta</item>
+        <item>Dark turquoise</item>
+        <item>Dark vanilla</item>
+        <item>Dark violet</item>
+        <item>Dark yellow</item>
+        <item>Dartmouth green</item>
+        <item>Davys grey</item>
+        <item>Debian red</item>
+        <item>Deep carmine</item>
+        <item>Deep carmine pink</item>
+        <item>Deep carrot orange</item>
+        <item>Deep cerise</item>
+        <item>Deep champagne</item>
+        <item>Deep chestnut</item>
+        <item>Deep coffee</item>
+        <item>Deep fuchsia</item>
+        <item>Deep jungle green</item>
+        <item>Deep lemon</item>
+        <item>Deep lilac</item>
+        <item>Deep magenta</item>
+        <item>Deep mauve</item>
+        <item>Deep peach</item>
+        <item>Deep pink</item>
+        <item>Deep ruby</item>
+        <item>Deep saffron</item>
+        <item>Deep sky blue</item>
+        <item>Deep Space Sparkle</item>
+        <item>Deep Taupe</item>
+        <item>Deep Tuscan red</item>
+        <item>Deer</item>
+        <item>Denim</item>
+        <item>Desert</item>
+        <item>Desert sand</item>
+        <item>Diamond</item>
+        <item>Dim gray</item>
+        <item>Dirt</item>
+        <item>Dodger blue</item>
+        <item>Dogwood rose</item>
+        <item>Dollar bill</item>
+        <item>Drab</item>
+        <item>Duke blue</item>
+        <item>Dust storm</item>
+        <item>Earth yellow</item>
+        <item>Ebony</item>
+        <item>Ecru</item>
+        <item>Eggplant</item>
+        <item>Eggshell</item>
+        <item>Egyptian blue</item>
+        <item>Electric blue</item>
+        <item>Electric crimson</item>
+        <item>Electric cyan</item>
+        <item>Electric green</item>
+        <item>Electric indigo</item>
+        <item>Electric lavender</item>
+        <item>Electric lime</item>
+        <item>Electric purple</item>
+        <item>Electric ultramarine</item>
+        <item>Electric violet</item>
+        <item>Electric yellow</item>
+        <item>Emerald</item>
+        <item>English green</item>
+        <item>English lavender</item>
+        <item>English red</item>
+        <item>Eton blue</item>
+        <item>Eucalyptus</item>
+        <item>Fallow</item>
+        <item>Falu red</item>
+        <item>Fandango</item>
+        <item>Fandango pink</item>
+        <item>Fashion fuchsia</item>
+        <item>Fawn</item>
+        <item>Feldgrau</item>
+        <item>Feldspar</item>
+        <item>Fern green</item>
+        <item>Ferrari Red</item>
+        <item>Field drab</item>
+        <item>Firebrick</item>
+        <item>Fire engine red</item>
+        <item>Flame</item>
+        <item>Flamingo pink</item>
+        <item>Flattery</item>
+        <item>Flavescent</item>
+        <item>Flax</item>
+        <item>Floral white</item>
+        <item>Fluorescent orange</item>
+        <item>Fluorescent pink</item>
+        <item>Fluorescent yellow</item>
+        <item>Folly</item>
+        <item>Forest green (traditional)</item>
+        <item>Forest green (web)</item>
+        <item>French beige</item>
+        <item>French bistre</item>
+        <item>French blue</item>
+        <item>French lilac</item>
+        <item>French lime</item>
+        <item>French mauve</item>
+        <item>French raspberry</item>
+        <item>French rose</item>
+        <item>French wine</item>
+        <item>Fresh Air</item>
+        <item>Fuchsia</item>
+        <item>Fuchsia (Crayola)</item>
+        <item>Fuchsia pink</item>
+        <item>Fuchsia rose</item>
+        <item>Fulvous</item>
+        <item>Fuzzy Wuzzy</item>
+        <item>Gainsboro</item>
+        <item>Gamboge</item>
+        <item>Ghost white</item>
+        <item>Ginger</item>
+        <item>Glaucous</item>
+        <item>Glitter</item>
+        <item>GO green</item>
+        <item>Gold (metallic)</item>
+        <item>Gold (web) (Golden)</item>
+        <item>Gold Fusion</item>
+        <item>Golden brown</item>
+        <item>Golden poppy</item>
+        <item>Golden yellow</item>
+        <item>Goldenrod</item>
+        <item>Granny Smith Apple</item>
+        <item>Grape</item>
+        <item>Gray</item>
+        <item>Gray (HTML/CSS gray)</item>
+        <item>Gray (X11 gray)</item>
+        <item>Gray-asparagus</item>
+        <item>Gray-blue</item>
+        <item>Green (color wheel) (X11 green)</item>
+        <item>Green (Crayola)</item>
+        <item>Green (HTML/CSS color)</item>
+        <item>Green (Munsell)</item>
+        <item>Green (NCS)</item>
+        <item>Green (pigment)</item>
+        <item>Green (RYB)</item>
+        <item>Green-yellow</item>
+        <item>Grullo</item>
+        <item>Guppie green</item>
+        <item>HalayГ  Гєbe</item>
+        <item>Han blue</item>
+        <item>Han purple</item>
+        <item>Hansa yellow</item>
+        <item>Harlequin</item>
+        <item>Harvard crimson</item>
+        <item>Harvest Gold</item>
+        <item>Heart Gold</item>
+        <item>Heliotrope</item>
+        <item>Hollywood cerise</item>
+        <item>Honeydew</item>
+        <item>Honolulu blue</item>
+        <item>Hookers green</item>
+        <item>Hot magenta</item>
+        <item>Hot pink</item>
+        <item>Hunter green</item>
+        <item>Iceberg</item>
+        <item>Icterine</item>
+        <item>Illuminating Emerald</item>
+        <item>Imperial</item>
+        <item>Imperial blue</item>
+        <item>Inchworm</item>
+        <item>India green</item>
+        <item>Indian red</item>
+        <item>Indian yellow</item>
+        <item>Indigo</item>
+        <item>Indigo (dye)</item>
+        <item>Indigo (web)</item>
+        <item>International Klein Blue</item>
+        <item>International orange (aerospace)</item>
+        <item>International orange (engineering)</item>
+        <item>International orange (Golden Gate Bridge)</item>
+        <item>Iris</item>
+        <item>Irresistible</item>
+        <item>Isabelline</item>
+        <item>Islamic green</item>
+        <item>Ivory</item>
+        <item>Jade</item>
+        <item>Jasmine</item>
+        <item>Jasper</item>
+        <item>Jazzberry jam</item>
+        <item>Jelly Bean</item>
+        <item>Jet</item>
+        <item>Jonquil</item>
+        <item>June bud</item>
+        <item>Jungle green</item>
+        <item>Kelly green</item>
+        <item>Kenyan copper</item>
+        <item>Khaki (HTML/CSS) (Khaki)</item>
+        <item>Khaki (X11) (Light khaki)</item>
+        <item>Kobe</item>
+        <item>Kobi</item>
+        <item>KU Crimson</item>
+        <item>La Salle Green</item>
+        <item>Languid lavender</item>
+        <item>Lapis lazuli</item>
+        <item>Laser Lemon</item>
+        <item>Laurel green</item>
+        <item>Lava</item>
+        <item>Lavender (floral)</item>
+        <item>Lavender (web)</item>
+        <item>Lavender blue</item>
+        <item>Lavender blush</item>
+        <item>Lavender gray</item>
+        <item>Lavender indigo</item>
+        <item>Lavender magenta</item>
+        <item>Lavender mist</item>
+        <item>Lavender pink</item>
+        <item>Lavender purple</item>
+        <item>Lavender rose</item>
+        <item>Lawn green</item>
+        <item>Lemon</item>
+        <item>Lemon chiffon</item>
+        <item>Lemon curry</item>
+        <item>Lemon lime</item>
+        <item>Lemon meringue</item>
+        <item>Lemon yellow</item>
+        <item>Licorice</item>
+        <item>Light apricot</item>
+        <item>Light blue</item>
+        <item>Light brown</item>
+        <item>Light carmine pink</item>
+        <item>Light coral</item>
+        <item>Light cornflower blue</item>
+        <item>Light crimson</item>
+        <item>Light cyan</item>
+        <item>Light fuchsia pink</item>
+        <item>Light goldenrod yellow</item>
+        <item>Light gray</item>
+        <item>Light green</item>
+        <item>Light khaki</item>
+        <item>Light medium orchid</item>
+        <item>Light orchid</item>
+        <item>Light pastel purple</item>
+        <item>Light pink</item>
+        <item>Light red ochre</item>
+        <item>Light salmon</item>
+        <item>Light salmon pink</item>
+        <item>Light sea green</item>
+        <item>Light sky blue</item>
+        <item>Light slate gray</item>
+        <item>Light steel blue</item>
+        <item>Light taupe</item>
+        <item>Light Thulian pink</item>
+        <item>Light yellow</item>
+        <item>Lilac</item>
+        <item>Lime (color wheel)</item>
+        <item>Lime (web) (X11 green)</item>
+        <item>Lime green</item>
+        <item>Limerick</item>
+        <item>Lincoln green</item>
+        <item>Linen</item>
+        <item>Lion</item>
+        <item>Little boy blue</item>
+        <item>Liver</item>
+        <item>Lumber</item>
+        <item>Lust</item>
+        <item>Magenta</item>
+        <item>Magenta (Crayola)</item>
+        <item>Magenta (dye)</item>
+        <item>Magenta (Pantone)</item>
+        <item>Magenta (process)</item>
+        <item>Magic mint</item>
+        <item>Magnolia</item>
+        <item>Mahogany</item>
+        <item>Maize</item>
+        <item>Majorelle Blue</item>
+        <item>Malachite</item>
+        <item>Manatee</item>
+        <item>Mango Tango</item>
+        <item>Mantis</item>
+        <item>Mardi Gras</item>
+        <item>Maroon (Crayola)</item>
+        <item>Maroon (HTML/CSS)</item>
+        <item>Maroon (X11)</item>
+        <item>Mauve</item>
+        <item>Mauve taupe</item>
+        <item>Mauvelous</item>
+        <item>Maya blue</item>
+        <item>Meat brown</item>
+        <item>Medium aquamarine</item>
+        <item>Medium blue</item>
+        <item>Medium candy apple red</item>
+        <item>Medium carmine</item>
+        <item>Medium champagne</item>
+        <item>Medium electric blue</item>
+        <item>Medium jungle green</item>
+        <item>Medium lavender magenta</item>
+        <item>Medium orchid</item>
+        <item>Medium Persian blue</item>
+        <item>Medium purple</item>
+        <item>Medium red-violet</item>
+        <item>Medium ruby</item>
+        <item>Medium sea green</item>
+        <item>Medium slate blue</item>
+        <item>Medium spring bud</item>
+        <item>Medium spring green</item>
+        <item>Medium taupe</item>
+        <item>Medium turquoise</item>
+        <item>Medium Tuscan red</item>
+        <item>Medium vermilion</item>
+        <item>Medium violet-red</item>
+        <item>Mellow apricot</item>
+        <item>Mellow yellow</item>
+        <item>Melon</item>
+        <item>Metallic Seaweed</item>
+        <item>Metallic Sunburst</item>
+        <item>Mexican pink</item>
+        <item>Midnight blue</item>
+        <item>Midnight green (eagle green)</item>
+        <item>Midori</item>
+        <item>Mikado yellow</item>
+        <item>Mint</item>
+        <item>Mint cream</item>
+        <item>Mint green</item>
+        <item>Misty rose</item>
+        <item>Moccasin</item>
+        <item>Mode beige</item>
+        <item>Moonstone blue</item>
+        <item>Mordant red 19</item>
+        <item>Moss green</item>
+        <item>Mountain Meadow</item>
+        <item>Mountbatten pink</item>
+        <item>MSU Green</item>
+        <item>Mulberry</item>
+        <item>Mustard</item>
+        <item>Myrtle</item>
+        <item>Nadeshiko pink</item>
+        <item>Napier green</item>
+        <item>Naples yellow</item>
+        <item>Navajo white</item>
+        <item>Navy blue</item>
+        <item>Navy purple</item>
+        <item>Neon Carrot</item>
+        <item>Neon fuchsia</item>
+        <item>Neon green</item>
+        <item>New Car</item>
+        <item>New York pink</item>
+        <item>Non-photo blue</item>
+        <item>North Texas Green</item>
+        <item>Nyanza</item>
+        <item>Ocean Boat Blue</item>
+        <item>Ochre</item>
+        <item>Office green</item>
+        <item>Old burgundy</item>
+        <item>Old gold</item>
+        <item>Old lace</item>
+        <item>Old lavender</item>
+        <item>Old mauve</item>
+        <item>Old rose</item>
+        <item>Old silver</item>
+        <item>Olive</item>
+        <item>Olive Drab (web) (Olive Drab 0x3)</item>
+        <item>Olive Drab 0x7</item>
+        <item>Olivine</item>
+        <item>Onyx</item>
+        <item>Opera mauve</item>
+        <item>Orange (color wheel)</item>
+        <item>Orange (RYB)</item>
+        <item>Orange (web color)</item>
+        <item>Orange peel</item>
+        <item>Orange-red</item>
+        <item>Orchid</item>
+        <item>Orchid pink</item>
+        <item>Otter brown</item>
+        <item>Outer Space</item>
+        <item>Outrageous Orange</item>
+        <item>Oxford Blue</item>
+        <item>OU Crimson Red</item>
+        <item>Pakistan green</item>
+        <item>Palatinate blue</item>
+        <item>Palatinate purple</item>
+        <item>Pale aqua</item>
+        <item>Pale blue</item>
+        <item>Pale brown</item>
+        <item>Pale carmine</item>
+        <item>Pale cerulean</item>
+        <item>Pale chestnut</item>
+        <item>Pale copper</item>
+        <item>Pale cornflower blue</item>
+        <item>Pale gold</item>
+        <item>Pale goldenrod</item>
+        <item>Pale green</item>
+        <item>Pale lavender</item>
+        <item>Pale magenta</item>
+        <item>Pale pink</item>
+        <item>Pale plum</item>
+        <item>Pale red-violet</item>
+        <item>Pale robin egg blue</item>
+        <item>Pale silver</item>
+        <item>Pale spring bud</item>
+        <item>Pale taupe</item>
+        <item>Pale turquoise</item>
+        <item>Pale violet-red</item>
+        <item>Pansy purple</item>
+        <item>Papaya whip</item>
+        <item>Paris Green</item>
+        <item>Pastel blue</item>
+        <item>Pastel brown</item>
+        <item>Pastel gray</item>
+        <item>Pastel green</item>
+        <item>Pastel magenta</item>
+        <item>Pastel orange</item>
+        <item>Pastel pink</item>
+        <item>Pastel purple</item>
+        <item>Pastel red</item>
+        <item>Pastel violet</item>
+        <item>Pastel yellow</item>
+        <item>Patriarch</item>
+        <item>Paynes grey</item>
+        <item>Peach</item>
+        <item>Peach (Crayola)</item>
+        <item>Peach-orange</item>
+        <item>Peach puff</item>
+        <item>Peach-yellow</item>
+        <item>Pear</item>
+        <item>Pearl</item>
+        <item>Pearl Aqua</item>
+        <item>Pearly purple</item>
+        <item>Peridot</item>
+        <item>Periwinkle</item>
+        <item>Persian blue</item>
+        <item>Persian green</item>
+        <item>Persian indigo</item>
+        <item>Persian orange</item>
+        <item>Persian pink</item>
+        <item>Persian plum</item>
+        <item>Persian red</item>
+        <item>Persian rose</item>
+        <item>Persimmon</item>
+        <item>Peru</item>
+        <item>Phlox</item>
+        <item>Phthalo blue</item>
+        <item>Phthalo green</item>
+        <item>Pictorial carmine</item>
+        <item>Piggy pink</item>
+        <item>Pine green</item>
+        <item>Pink</item>
+        <item>Pink lace</item>
+        <item>Pink-orange</item>
+        <item>Pink pearl</item>
+        <item>Pink Sherbet</item>
+        <item>Pistachio</item>
+        <item>Platinum</item>
+        <item>Plum (traditional)</item>
+        <item>Plum (web)</item>
+        <item>Pomp and Power</item>
+        <item>Portland Orange</item>
+        <item>Powder blue (web)</item>
+        <item>Princeton orange</item>
+        <item>Prune</item>
+        <item>Prussian blue</item>
+        <item>Psychedelic purple</item>
+        <item>Puce</item>
+        <item>Pumpkin</item>
+        <item>Purple (HTML/CSS)</item>
+        <item>Purple (Munsell)</item>
+        <item>Purple (X11)</item>
+        <item>Purple Heart</item>
+        <item>Purple mountain majesty</item>
+        <item>Purple pizzazz</item>
+        <item>Purple taupe</item>
+        <item>Quartz</item>
+        <item>Queen blue</item>
+        <item>Queen pink</item>
+        <item>Rackley</item>
+        <item>Radical Red</item>
+        <item>Rajah</item>
+        <item>Raspberry</item>
+        <item>Raspberry glace</item>
+        <item>Raspberry pink</item>
+        <item>Raspberry rose</item>
+        <item>Raw umber</item>
+        <item>Razzle dazzle rose</item>
+        <item>Razzmatazz</item>
+        <item>Razzmic Berry</item>
+        <item>Red</item>
+        <item>Red (Munsell)</item>
+        <item>Red (NCS)</item>
+        <item>Red (pigment)</item>
+        <item>Red (RYB)</item>
+        <item>Red-brown</item>
+        <item>Red devil</item>
+        <item>Red-orange</item>
+        <item>Red-violet</item>
+        <item>Redwood</item>
+        <item>Regalia</item>
+        <item>Resolution blue</item>
+        <item>Rhythm</item>
+        <item>Rich black</item>
+        <item>Rich brilliant lavender</item>
+        <item>Rich carmine</item>
+        <item>Rich electric blue</item>
+        <item>Rich lavender</item>
+        <item>Rich lilac</item>
+        <item>Rich maroon</item>
+        <item>Rifle green</item>
+        <item>Robin egg blue</item>
+        <item>Rocket metallic</item>
+        <item>Roman silver</item>
+        <item>Rose</item>
+        <item>Rose bonbon</item>
+        <item>Rose ebony</item>
+        <item>Rose gold</item>
+        <item>Rose madder</item>
+        <item>Rose pink</item>
+        <item>Rose quartz</item>
+        <item>Rose taupe</item>
+        <item>Rose vale</item>
+        <item>Rosewood</item>
+        <item>Rosso corsa</item>
+        <item>Rosy brown</item>
+        <item>Royal azure</item>
+        <item>Royal blue (traditional)</item>
+        <item>Royal blue (web)</item>
+        <item>Royal fuchsia</item>
+        <item>Royal purple</item>
+        <item>Royal yellow</item>
+        <item>Ruber</item>
+        <item>Rubine red</item>
+        <item>Ruby</item>
+        <item>Ruby red</item>
+        <item>Ruddy</item>
+        <item>Ruddy brown</item>
+        <item>Ruddy pink</item>
+        <item>Rufous</item>
+        <item>Russet</item>
+        <item>Rust</item>
+        <item>Rusty red</item>
+        <item>Sacramento State green</item>
+        <item>Saddle brown</item>
+        <item>Safety orange (blaze orange)</item>
+        <item>Saffron</item>
+        <item>St. Patricks blue</item>
+        <item>Salmon</item>
+        <item>Salmon pink</item>
+        <item>Sand</item>
+        <item>Sand dune</item>
+        <item>Sandstorm</item>
+        <item>Sandy brown</item>
+        <item>Sandy taupe</item>
+        <item>Sangria</item>
+        <item>Sap green</item>
+        <item>Sapphire</item>
+        <item>Sapphire blue</item>
+        <item>Sassy Pink</item>
+        <item>Satin sheen gold</item>
+        <item>Scarlet</item>
+        <item>Scarlet (Crayola)</item>
+        <item>Schauss pink</item>
+        <item>School bus yellow</item>
+        <item>Screamin Green</item>
+        <item>Sea blue</item>
+        <item>Sea green</item>
+        <item>Seal brown</item>
+        <item>Seashell</item>
+        <item>Selective yellow</item>
+        <item>Sepia</item>
+        <item>Shadow</item>
+        <item>Shampoo</item>
+        <item>Shamrock green</item>
+        <item>Sheen Green</item>
+        <item>Shimmering Blush</item>
+        <item>Shocking pink</item>
+        <item>Shocking pink (Crayola)</item>
+        <item>Sienna</item>
+        <item>Silver</item>
+        <item>Silver chalice</item>
+        <item>Silver pink</item>
+        <item>Silver sand</item>
+        <item>Sinopia</item>
+        <item>Skobeloff</item>
+        <item>Sky blue</item>
+        <item>Sky magenta</item>
+        <item>Slate blue</item>
+        <item>Slate gray</item>
+        <item>Smalt (Dark powder blue)</item>
+        <item>Smitten</item>
+        <item>Smoke</item>
+        <item>Smokey topaz</item>
+        <item>Smoky black</item>
+        <item>Snow</item>
+        <item>Soap</item>
+        <item>Sonic silver</item>
+        <item>Space cadet</item>
+        <item>Spanish bistre</item>
+        <item>Spanish carmine</item>
+        <item>Spanish crimson</item>
+        <item>Spanish orange</item>
+        <item>Spiro Disco Ball</item>
+        <item>Spring bud</item>
+        <item>Spring green</item>
+        <item>Star command blue</item>
+        <item>Steel blue</item>
+        <item>Steel pink</item>
+        <item>Stil de grain yellow</item>
+        <item>Stizza</item>
+        <item>Stormcloud</item>
+        <item>Straw</item>
+        <item>Strawberry</item>
+        <item>Sunglow</item>
+        <item>Sunset</item>
+        <item>Super pink</item>
+        <item>Tan</item>
+        <item>Tangelo</item>
+        <item>Tangerine</item>
+        <item>Tangerine yellow</item>
+        <item>Tango pink</item>
+        <item>Taupe</item>
+        <item>Taupe gray</item>
+        <item>Tea green</item>
+        <item>Tea rose (orange)</item>
+        <item>Tea rose (rose)</item>
+        <item>Teal</item>
+        <item>Teal blue</item>
+        <item>Teal deer</item>
+        <item>Teal green</item>
+        <item>Telemagenta</item>
+        <item>TennГ© (Tawny)</item>
+        <item>Terra cotta</item>
+        <item>Thistle</item>
+        <item>Thulian pink</item>
+        <item>Tickle Me Pink</item>
+        <item>Tiffany Blue</item>
+        <item>Tigers eye</item>
+        <item>Timberwolf</item>
+        <item>Titanium yellow</item>
+        <item>Tomato</item>
+        <item>Toolbox</item>
+        <item>Topaz</item>
+        <item>Tractor red</item>
+        <item>Trolley Grey</item>
+        <item>Tropical rain forest</item>
+        <item>True Blue</item>
+        <item>Tufts Blue</item>
+        <item>Tulip</item>
+        <item>Tumbleweed</item>
+        <item>Turkish rose</item>
+        <item>Turquoise</item>
+        <item>Turquoise blue</item>
+        <item>Turquoise green</item>
+        <item>Tuscan</item>
+        <item>Tuscan brown</item>
+        <item>Tuscan red</item>
+        <item>Tuscan tan</item>
+        <item>Tuscany</item>
+        <item>Twilight lavender</item>
+        <item>Tyrian purple</item>
+        <item>UA blue</item>
+        <item>UA red</item>
+        <item>Ube</item>
+        <item>UCLA Blue</item>
+        <item>UCLA Gold</item>
+        <item>UFO Green</item>
+        <item>Ultramarine</item>
+        <item>Ultramarine blue</item>
+        <item>Ultra pink</item>
+        <item>Umber</item>
+        <item>Unbleached silk</item>
+        <item>United Nations blue</item>
+        <item>University of California Gold</item>
+        <item>Unmellow Yellow</item>
+        <item>UP Forest green</item>
+        <item>UP Maroon</item>
+        <item>Upsdell red</item>
+        <item>Urobilin</item>
+        <item>USAFA blue</item>
+        <item>USC Cardinal</item>
+        <item>USC Gold</item>
+        <item>University of Tennessee Orange</item>
+        <item>Utah Crimson</item>
+        <item>Vanilla</item>
+        <item>Vanilla ice</item>
+        <item>Vegas gold</item>
+        <item>Venetian red</item>
+        <item>Verdigris</item>
+        <item>Vermilion (cinnabar)</item>
+        <item>Vermilion (Plochere)</item>
+        <item>Veronica</item>
+        <item>Violet</item>
+        <item>Violet (color wheel)</item>
+        <item>Violet (RYB)</item>
+        <item>Violet (web)</item>
+        <item>Violet-blue</item>
+        <item>Violet-red</item>
+        <item>Viridian</item>
+        <item>Vivid auburn</item>
+        <item>Vivid burgundy</item>
+        <item>Vivid cerise</item>
+        <item>Vivid orchid</item>
+        <item>Vivid tangerine</item>
+        <item>Vivid violet</item>
+        <item>Warm black</item>
+        <item>Waterspout</item>
+        <item>Wenge</item>
+        <item>Wheat</item>
+        <item>White</item>
+        <item>White smoke</item>
+        <item>Wild blue yonder</item>
+        <item>Wild orchid</item>
+        <item>Wild Strawberry</item>
+        <item>Wild Watermelon</item>
+        <item>Windsor tan</item>
+        <item>Wine</item>
+        <item>Wine dregs</item>
+        <item>Wisteria</item>
+        <item>Wood brown</item>
+        <item>Xanadu</item>
+        <item>Yale Blue</item>
+        <item>Yellow</item>
+        <item>Yellow (Munsell)</item>
+        <item>Yellow (NCS)</item>
+        <item>Yellow (process)</item>
+        <item>Yellow (RYB)</item>
+        <item>Yellow-green</item>
+        <item>Yellow Orange</item>
+        <item>Yellow rose</item>
+        <item>Zaffre</item>
+        <item>Zinnwaldite brown</item>
+    </string-array>
+
+    <string name="passort_id_label">Passort ID:</string>
+    <string name="title_activity_menu">Carpool NBU</string>
+    <string name="register_driver_item">Register Driver</string>
+    <string name="register_passenger_item">Register Passenger</string>
+    <string name="post_trip_item">Post Trip</string>
+    <string name="search_trip_item">Search Trip</string>
+    <string name="exit_item">Exit</string>
+
+</resources>

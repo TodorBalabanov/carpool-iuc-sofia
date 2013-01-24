@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MenuActivity" >
+
+    <Button
+        android:id="@+id/driver_registration_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register_driver_item"
+        />
+
+    <Button
+        android:id="@+id/passenger_registration_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register_passenger_item"
+        />
+    
+    <Button
+        android:id="@+id/post_trip_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/post_trip_item"
+        />
+    
+    <Button
+        android:id="@+id/search_trip_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_trip_item"
+        />
+    
+    <Button
+        android:id="@+id/exit_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/exit_item"
+        />
+    
+</LinearLayout>
