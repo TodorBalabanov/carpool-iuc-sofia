@@ -32,7 +32,7 @@ public class PassengerRegistrationActivity extends TabActivity {
 			passport.setText(p.getPassport());
 		}
 	}
-	
+
 	private class PassengerAdapter extends ArrayAdapter<Passenger> {
 		public PassengerAdapter() {
 			super(PassengerRegistrationActivity.this,
@@ -57,7 +57,9 @@ public class PassengerRegistrationActivity extends TabActivity {
 			return (row);
 		}
 	}
-	
+
+	private PeopleHelper helper = null;
+
 	private ArrayList<Passenger> model = new ArrayList<Passenger>();
 
 	private PassengerAdapter adapter = null;
@@ -66,7 +68,7 @@ public class PassengerRegistrationActivity extends TabActivity {
 	private EditText passport = null;
 	private EditText phone = null;
 	private EditText notes = null;
-	
+
 	private View.OnClickListener onSave = new View.OnClickListener() {
 		public void onClick(View v) {
 			Passenger p = new Passenger();
@@ -74,14 +76,18 @@ public class PassengerRegistrationActivity extends TabActivity {
 			p.setName(name.getText().toString());
 			p.setPassport(passport.getText().toString());
 			p.setPhone(phone.getText().toString());
-			p.setNotes( notes.getText().toString() );
+			p.setNotes(notes.getText().toString());
 
 			adapter.add(p);
 
 			getTabHost().setCurrentTab(0);
+
+			helper.insertPassenger(name.getText().toString(), phone.getText()
+					.toString(), notes.getText().toString(), passport.getText()
+					.toString());
 		}
 	};
-	
+
 	private AdapterView.OnItemClickListener onListClick = new AdapterView.OnItemClickListener() {
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
@@ -96,10 +102,10 @@ public class PassengerRegistrationActivity extends TabActivity {
 		}
 	};
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_passenger_registration);
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_passenger_registration);
 		((Button) findViewById(R.id.save)).setOnClickListener(onSave);
 
 		adapter = new PassengerAdapter();
@@ -120,18 +126,25 @@ public class PassengerRegistrationActivity extends TabActivity {
 		passport = (EditText) findViewById(R.id.passport);
 		phone = (EditText) findViewById(R.id.phone);
 		notes = (EditText) findViewById(R.id.notes);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_passenger_registration, menu);
-        return true;
-    }
+		helper = new PeopleHelper(PassengerRegistrationActivity.this);
+	}
 
-    
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.activity_passenger_registration, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		helper.close();
+	}
 
 }

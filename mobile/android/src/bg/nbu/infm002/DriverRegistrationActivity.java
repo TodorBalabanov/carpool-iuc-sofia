@@ -63,6 +63,8 @@ public class DriverRegistrationActivity extends TabActivity {
 		}
 	}
 
+	private PeopleHelper helper = null;
+
 	private ArrayList<Driver> model = new ArrayList<Driver>();
 
 	private DriverAdapter adapter = null;
@@ -74,10 +76,10 @@ public class DriverRegistrationActivity extends TabActivity {
 	private EditText carModel = null;
 	private Spinner carColor = null;
 	private EditText notes = null;
-	
+
 	private ArrayList<String> brands = new ArrayList<String>();
 	private ArrayList<String> colors = new ArrayList<String>();
-	
+
 	private View.OnClickListener onSave = new View.OnClickListener() {
 		public void onClick(View v) {
 			Driver d = new Driver();
@@ -88,11 +90,17 @@ public class DriverRegistrationActivity extends TabActivity {
 			d.setCarBrand(carBrand.getSelectedItem().toString());
 			d.setCarModel(carModel.getText().toString());
 			d.setCarColor(carColor.getSelectedItem().toString());
-			d.setNotes( notes.getText().toString() );
+			d.setNotes(notes.getText().toString());
 
 			adapter.add(d);
 
 			getTabHost().setCurrentTab(0);
+
+			helper.insertDriver(name.getText().toString(), phone.getText()
+					.toString(), notes.getText().toString(), license.getText()
+					.toString(), carBrand.getSelectedItem().toString(),
+					carModel.getText().toString(), carColor.getSelectedItem()
+							.toString());
 		}
 	};
 
@@ -140,13 +148,23 @@ public class DriverRegistrationActivity extends TabActivity {
 		carModel = (EditText) findViewById(R.id.car_model);
 		carColor = (Spinner) findViewById(R.id.car_color);
 		notes = (EditText) findViewById(R.id.notes);
-		
-		Collections.addAll(brands, getResources().getStringArray(R.array.car_brands));
-		//Collections.addAll(colors, getResources().getStringArray(R.array.car_colors));
+
+		Collections.addAll(brands,
+				getResources().getStringArray(R.array.car_brands));
+		// Collections.addAll(colors,
+		// getResources().getStringArray(R.array.car_colors));
+
+		helper = new PeopleHelper(DriverRegistrationActivity.this);
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_driver_registration, menu);
 		return true;
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		helper.close();
 	}
 }
