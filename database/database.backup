@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.7
 -- Dumped by pg_dump version 9.1.7
--- Started on 2013-02-05 14:22:27 EET
+-- Started on 2013-02-05 19:54:45 EET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -13,7 +13,7 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 
 --
--- TOC entry 180 (class 3079 OID 11680)
+-- TOC entry 181 (class 3079 OID 11680)
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
 --
 
@@ -21,8 +21,8 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2011 (class 0 OID 0)
--- Dependencies: 180
+-- TOC entry 2016 (class 0 OID 0)
+-- Dependencies: 181
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
 
@@ -32,8 +32,8 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 192 (class 1255 OID 16520)
--- Dependencies: 6 546
+-- TOC entry 193 (class 1255 OID 16520)
+-- Dependencies: 550 6
 -- Name: add_car(integer, character varying, character varying, character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -70,8 +70,8 @@ $$;
 ALTER FUNCTION public.add_car(arg_person_id integer, arg_brand character varying, arg_model character varying, arg_registration character varying, arg_color integer) OWNER TO postgres;
 
 --
--- TOC entry 193 (class 1255 OID 16521)
--- Dependencies: 546 6
+-- TOC entry 194 (class 1255 OID 16521)
+-- Dependencies: 550 6
 -- Name: add_person(character varying, character varying, character varying, character varying, character varying, character varying, character varying, boolean, boolean, boolean, text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -107,8 +107,8 @@ $$;
 ALTER FUNCTION public.add_person(arg_first_name character varying, arg_last_name character varying, arg_email character varying, arg_password character varying, arg_phone character varying, arg_passport character varying, arg_license character varying, arg_driver boolean, arg_passenger boolean, arg_smoking boolean, arg_notes text) OWNER TO postgres;
 
 --
--- TOC entry 194 (class 1255 OID 16658)
--- Dependencies: 546 6
+-- TOC entry 195 (class 1255 OID 16658)
+-- Dependencies: 550 6
 -- Name: add_trip(character varying, character varying, character varying, timestamp with time zone, integer, boolean, boolean, text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -148,8 +148,8 @@ $$;
 ALTER FUNCTION public.add_trip(arg_from character varying, arg_to character varying, arg_registration character varying, arg_departure timestamp with time zone, arg_seats integer, arg_free boolean, arg_paid boolean, arg_notes text) OWNER TO postgres;
 
 --
--- TOC entry 195 (class 1255 OID 16667)
--- Dependencies: 546 6
+-- TOC entry 196 (class 1255 OID 16667)
+-- Dependencies: 550 6
 -- Name: sign_for_trip(integer, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -209,7 +209,7 @@ SET default_with_oids = false;
 
 --
 -- TOC entry 162 (class 1259 OID 16524)
--- Dependencies: 1947 6
+-- Dependencies: 1952 6
 -- Name: brand; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -239,7 +239,7 @@ ALTER TABLE public.car_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 164 (class 1259 OID 16530)
--- Dependencies: 1948 6
+-- Dependencies: 1953 6
 -- Name: car; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -272,7 +272,7 @@ ALTER TABLE public.driver_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 166 (class 1259 OID 16536)
--- Dependencies: 1949 6
+-- Dependencies: 1954 6
 -- Name: driver; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -303,7 +303,7 @@ ALTER TABLE public.location_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 168 (class 1259 OID 16542)
--- Dependencies: 1950 6
+-- Dependencies: 1955 6
 -- Name: location; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -337,7 +337,7 @@ ALTER TABLE public.model_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 170 (class 1259 OID 16548)
--- Dependencies: 1951 6
+-- Dependencies: 1956 6
 -- Name: model; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -368,7 +368,7 @@ ALTER TABLE public.passenger_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 172 (class 1259 OID 16554)
--- Dependencies: 1952 6
+-- Dependencies: 1957 6
 -- Name: passenger; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -399,7 +399,7 @@ ALTER TABLE public.person_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 174 (class 1259 OID 16560)
--- Dependencies: 1953 6
+-- Dependencies: 1958 6
 -- Name: person; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -435,7 +435,7 @@ ALTER TABLE public.travelers_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 176 (class 1259 OID 16569)
--- Dependencies: 1954 6
+-- Dependencies: 1959 6
 -- Name: travelers; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -466,7 +466,7 @@ ALTER TABLE public.trip_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 178 (class 1259 OID 16575)
--- Dependencies: 1955 6
+-- Dependencies: 1960 6
 -- Name: trip; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -486,8 +486,20 @@ CREATE TABLE trip (
 ALTER TABLE public.trip OWNER TO postgres;
 
 --
+-- TOC entry 180 (class 1259 OID 16677)
+-- Dependencies: 1951 6
+-- Name: trip_details_view; Type: VIEW; Schema: public; Owner: postgres
+--
+
+CREATE VIEW trip_details_view AS
+    SELECT trip.id, person.first_name, person.last_name, person.phone, l1.name AS start_location, l2.name AS end_location, trip.departure, brand.name AS brand, model.name AS model, car.color, car.registration, trip.seats, (trip.seats - (SELECT (count(*) - 1) FROM travelers WHERE (travelers.trip_id = trip.id))) AS available_seats, trip.free, trip.paid, person.smoker, trip.notes FROM trip, person, location l1, location l2, car, brand, model, driver WHERE (((((((trip.start_location_id = l1.id) AND (trip.end_location_id = l2.id)) AND (trip.car_id = car.id)) AND (model.brand_id = brand.id)) AND (car.model_id = model.id)) AND (car.driver_id = driver.id)) AND (driver.person_id = person.id));
+
+
+ALTER TABLE public.trip_details_view OWNER TO postgres;
+
+--
 -- TOC entry 179 (class 1259 OID 16582)
--- Dependencies: 1946 6
+-- Dependencies: 1950 6
 -- Name: trips_view; Type: VIEW; Schema: public; Owner: postgres
 --
 
@@ -498,8 +510,8 @@ CREATE VIEW trips_view AS
 ALTER TABLE public.trips_view OWNER TO postgres;
 
 --
--- TOC entry 1987 (class 0 OID 16524)
--- Dependencies: 162 2004
+-- TOC entry 1992 (class 0 OID 16524)
+-- Dependencies: 162 2009
 -- Data for Name: brand; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -605,7 +617,7 @@ INSERT INTO brand (id, name) VALUES (99, 'Zaz');
 
 
 --
--- TOC entry 2012 (class 0 OID 0)
+-- TOC entry 2017 (class 0 OID 0)
 -- Dependencies: 161
 -- Name: brand_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -614,8 +626,8 @@ SELECT pg_catalog.setval('brand_id_seq', 3, true);
 
 
 --
--- TOC entry 1989 (class 0 OID 16530)
--- Dependencies: 164 2004
+-- TOC entry 1994 (class 0 OID 16530)
+-- Dependencies: 164 2009
 -- Data for Name: car; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -625,7 +637,7 @@ INSERT INTO car (id, model_id, driver_id, registration, color) VALUES (7, 1, 8, 
 
 
 --
--- TOC entry 2013 (class 0 OID 0)
+-- TOC entry 2018 (class 0 OID 0)
 -- Dependencies: 163
 -- Name: car_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -634,8 +646,8 @@ SELECT pg_catalog.setval('car_id_seq', 7, true);
 
 
 --
--- TOC entry 1991 (class 0 OID 16536)
--- Dependencies: 166 2004
+-- TOC entry 1996 (class 0 OID 16536)
+-- Dependencies: 166 2009
 -- Data for Name: driver; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -648,7 +660,7 @@ INSERT INTO driver (id, license, person_id) VALUES (11, 'license5', 21);
 
 
 --
--- TOC entry 2014 (class 0 OID 0)
+-- TOC entry 2019 (class 0 OID 0)
 -- Dependencies: 165
 -- Name: driver_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -657,8 +669,8 @@ SELECT pg_catalog.setval('driver_id_seq', 11, true);
 
 
 --
--- TOC entry 1993 (class 0 OID 16542)
--- Dependencies: 168 2004
+-- TOC entry 1998 (class 0 OID 16542)
+-- Dependencies: 168 2009
 -- Data for Name: location; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5328,7 +5340,7 @@ INSERT INTO location (id, name, settlement, area, x, y) VALUES (4663, 'Яхин�
 
 
 --
--- TOC entry 2015 (class 0 OID 0)
+-- TOC entry 2020 (class 0 OID 0)
 -- Dependencies: 167
 -- Name: location_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -5337,8 +5349,8 @@ SELECT pg_catalog.setval('location_id_seq', 18175, true);
 
 
 --
--- TOC entry 1995 (class 0 OID 16548)
--- Dependencies: 170 2004
+-- TOC entry 2000 (class 0 OID 16548)
+-- Dependencies: 170 2009
 -- Data for Name: model; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5349,7 +5361,7 @@ INSERT INTO model (id, name, brand_id) VALUES (4, 'Model 2', 4);
 
 
 --
--- TOC entry 2016 (class 0 OID 0)
+-- TOC entry 2021 (class 0 OID 0)
 -- Dependencies: 169
 -- Name: model_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -5358,8 +5370,8 @@ SELECT pg_catalog.setval('model_id_seq', 4, true);
 
 
 --
--- TOC entry 1997 (class 0 OID 16554)
--- Dependencies: 172 2004
+-- TOC entry 2002 (class 0 OID 16554)
+-- Dependencies: 172 2009
 -- Data for Name: passenger; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5373,7 +5385,7 @@ INSERT INTO passenger (id, passport, person_id) VALUES (7, 'passport5', 21);
 
 
 --
--- TOC entry 2017 (class 0 OID 0)
+-- TOC entry 2022 (class 0 OID 0)
 -- Dependencies: 171
 -- Name: passenger_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -5382,8 +5394,8 @@ SELECT pg_catalog.setval('passenger_id_seq', 7, true);
 
 
 --
--- TOC entry 1999 (class 0 OID 16560)
--- Dependencies: 174 2004
+-- TOC entry 2004 (class 0 OID 16560)
+-- Dependencies: 174 2009
 -- Data for Name: person; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5401,7 +5413,7 @@ INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, n
 
 
 --
--- TOC entry 2018 (class 0 OID 0)
+-- TOC entry 2023 (class 0 OID 0)
 -- Dependencies: 173
 -- Name: person_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -5410,8 +5422,8 @@ SELECT pg_catalog.setval('person_id_seq', 21, true);
 
 
 --
--- TOC entry 2001 (class 0 OID 16569)
--- Dependencies: 176 2004
+-- TOC entry 2006 (class 0 OID 16569)
+-- Dependencies: 176 2009
 -- Data for Name: travelers; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5422,7 +5434,7 @@ INSERT INTO travelers (id, trip_id, person_id) VALUES (4, 4, 9);
 
 
 --
--- TOC entry 2019 (class 0 OID 0)
+-- TOC entry 2024 (class 0 OID 0)
 -- Dependencies: 175
 -- Name: travelers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -5431,8 +5443,8 @@ SELECT pg_catalog.setval('travelers_id_seq', 4, true);
 
 
 --
--- TOC entry 2003 (class 0 OID 16575)
--- Dependencies: 178 2004
+-- TOC entry 2008 (class 0 OID 16575)
+-- Dependencies: 178 2009
 -- Data for Name: trip; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5442,7 +5454,7 @@ INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, sea
 
 
 --
--- TOC entry 2020 (class 0 OID 0)
+-- TOC entry 2025 (class 0 OID 0)
 -- Dependencies: 177
 -- Name: trip_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -5451,8 +5463,8 @@ SELECT pg_catalog.setval('trip_id_seq', 4, true);
 
 
 --
--- TOC entry 1957 (class 2606 OID 16588)
--- Dependencies: 162 162 2005
+-- TOC entry 1962 (class 2606 OID 16588)
+-- Dependencies: 162 162 2010
 -- Name: brand_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -5461,8 +5473,8 @@ ALTER TABLE ONLY brand
 
 
 --
--- TOC entry 1959 (class 2606 OID 16590)
--- Dependencies: 164 164 2005
+-- TOC entry 1964 (class 2606 OID 16590)
+-- Dependencies: 164 164 2010
 -- Name: car_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -5471,8 +5483,8 @@ ALTER TABLE ONLY car
 
 
 --
--- TOC entry 1961 (class 2606 OID 16592)
--- Dependencies: 166 166 2005
+-- TOC entry 1966 (class 2606 OID 16592)
+-- Dependencies: 166 166 2010
 -- Name: driver_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -5481,8 +5493,8 @@ ALTER TABLE ONLY driver
 
 
 --
--- TOC entry 1969 (class 2606 OID 16671)
--- Dependencies: 174 174 2005
+-- TOC entry 1974 (class 2606 OID 16671)
+-- Dependencies: 174 174 2010
 -- Name: email_un; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -5491,8 +5503,8 @@ ALTER TABLE ONLY person
 
 
 --
--- TOC entry 1963 (class 2606 OID 16594)
--- Dependencies: 168 168 2005
+-- TOC entry 1968 (class 2606 OID 16594)
+-- Dependencies: 168 168 2010
 -- Name: location_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -5501,8 +5513,8 @@ ALTER TABLE ONLY location
 
 
 --
--- TOC entry 1965 (class 2606 OID 16596)
--- Dependencies: 170 170 2005
+-- TOC entry 1970 (class 2606 OID 16596)
+-- Dependencies: 170 170 2010
 -- Name: model_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -5511,8 +5523,8 @@ ALTER TABLE ONLY model
 
 
 --
--- TOC entry 1967 (class 2606 OID 16598)
--- Dependencies: 172 172 2005
+-- TOC entry 1972 (class 2606 OID 16598)
+-- Dependencies: 172 172 2010
 -- Name: passenger_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -5521,8 +5533,8 @@ ALTER TABLE ONLY passenger
 
 
 --
--- TOC entry 1971 (class 2606 OID 16600)
--- Dependencies: 174 174 2005
+-- TOC entry 1976 (class 2606 OID 16600)
+-- Dependencies: 174 174 2010
 -- Name: person_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -5531,8 +5543,8 @@ ALTER TABLE ONLY person
 
 
 --
--- TOC entry 1973 (class 2606 OID 16602)
--- Dependencies: 176 176 2005
+-- TOC entry 1978 (class 2606 OID 16602)
+-- Dependencies: 176 176 2010
 -- Name: travelers_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -5541,8 +5553,8 @@ ALTER TABLE ONLY travelers
 
 
 --
--- TOC entry 1975 (class 2606 OID 16604)
--- Dependencies: 178 178 2005
+-- TOC entry 1980 (class 2606 OID 16604)
+-- Dependencies: 178 178 2010
 -- Name: trip_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -5551,8 +5563,8 @@ ALTER TABLE ONLY trip
 
 
 --
--- TOC entry 1979 (class 2606 OID 16605)
--- Dependencies: 162 1956 170 2005
+-- TOC entry 1984 (class 2606 OID 16605)
+-- Dependencies: 1961 170 162 2010
 -- Name: brand_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5561,8 +5573,8 @@ ALTER TABLE ONLY model
 
 
 --
--- TOC entry 1983 (class 2606 OID 16610)
--- Dependencies: 164 1958 178 2005
+-- TOC entry 1988 (class 2606 OID 16610)
+-- Dependencies: 178 1963 164 2010
 -- Name: car_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5571,8 +5583,8 @@ ALTER TABLE ONLY trip
 
 
 --
--- TOC entry 1976 (class 2606 OID 16615)
--- Dependencies: 1960 166 164 2005
+-- TOC entry 1981 (class 2606 OID 16615)
+-- Dependencies: 164 1965 166 2010
 -- Name: driver_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5581,8 +5593,8 @@ ALTER TABLE ONLY car
 
 
 --
--- TOC entry 1984 (class 2606 OID 16620)
--- Dependencies: 178 168 1962 2005
+-- TOC entry 1989 (class 2606 OID 16620)
+-- Dependencies: 178 1967 168 2010
 -- Name: end_location_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5591,8 +5603,8 @@ ALTER TABLE ONLY trip
 
 
 --
--- TOC entry 1977 (class 2606 OID 16625)
--- Dependencies: 164 1964 170 2005
+-- TOC entry 1982 (class 2606 OID 16625)
+-- Dependencies: 1969 170 164 2010
 -- Name: model_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5601,8 +5613,8 @@ ALTER TABLE ONLY car
 
 
 --
--- TOC entry 1981 (class 2606 OID 16630)
--- Dependencies: 174 1970 176 2005
+-- TOC entry 1986 (class 2606 OID 16630)
+-- Dependencies: 174 1975 176 2010
 -- Name: person_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5611,8 +5623,8 @@ ALTER TABLE ONLY travelers
 
 
 --
--- TOC entry 1978 (class 2606 OID 16635)
--- Dependencies: 166 174 1970 2005
+-- TOC entry 1983 (class 2606 OID 16635)
+-- Dependencies: 174 166 1975 2010
 -- Name: person_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5621,8 +5633,8 @@ ALTER TABLE ONLY driver
 
 
 --
--- TOC entry 1980 (class 2606 OID 16640)
--- Dependencies: 172 1970 174 2005
+-- TOC entry 1985 (class 2606 OID 16640)
+-- Dependencies: 172 174 1975 2010
 -- Name: person_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5631,8 +5643,8 @@ ALTER TABLE ONLY passenger
 
 
 --
--- TOC entry 1985 (class 2606 OID 16645)
--- Dependencies: 178 1962 168 2005
+-- TOC entry 1990 (class 2606 OID 16645)
+-- Dependencies: 1967 178 168 2010
 -- Name: start_location_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5641,8 +5653,8 @@ ALTER TABLE ONLY trip
 
 
 --
--- TOC entry 1982 (class 2606 OID 16650)
--- Dependencies: 176 1974 178 2005
+-- TOC entry 1987 (class 2606 OID 16650)
+-- Dependencies: 178 1979 176 2010
 -- Name: trip_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5651,7 +5663,7 @@ ALTER TABLE ONLY travelers
 
 
 --
--- TOC entry 2010 (class 0 OID 0)
+-- TOC entry 2015 (class 0 OID 0)
 -- Dependencies: 6
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
@@ -5662,7 +5674,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2013-02-05 14:22:29 EET
+-- Completed on 2013-02-05 19:54:47 EET
 
 --
 -- PostgreSQL database dump complete
