@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.7
 -- Dumped by pg_dump version 9.1.7
--- Started on 2013-02-05 19:54:45 EET
+-- Started on 2013-02-08 00:04:11 EET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -504,7 +504,7 @@ ALTER TABLE public.trip_details_view OWNER TO postgres;
 --
 
 CREATE VIEW trips_view AS
-    SELECT t.id, p.first_name, p.last_name, p.phone, l1.name AS start_location, l2.name AS end_location, t.departure, (t.seats - (SELECT (count(*) - 1) FROM travelers WHERE (travelers.trip_id = t.id))) AS available_seats, t.free, t.paid FROM trip t, car c, driver d, person p, location l1, location l2 WHERE ((((((c.id = t.car_id) AND (d.id = c.driver_id)) AND (d.person_id = p.id)) AND (t.start_location_id = l1.id)) AND (t.end_location_id = l2.id)) AND (t.departure > now()));
+    SELECT t.id, p.first_name, p.last_name, p.phone, l1.name AS start_location, l2.name AS end_location, t.departure, (t.seats - (SELECT (count(*) - 1) FROM travelers WHERE (travelers.trip_id = t.id))) AS available_seats, t.free, t.paid FROM trip t, car c, driver d, person p, location l1, location l2 WHERE ((((((c.id = t.car_id) AND (d.id = c.driver_id)) AND (d.person_id = p.id)) AND (t.start_location_id = l1.id)) AND (t.end_location_id = l2.id)) AND (t.departure > now())) ORDER BY t.departure, l1.name, l2.name;
 
 
 ALTER TABLE public.trips_view OWNER TO postgres;
@@ -5448,9 +5448,14 @@ SELECT pg_catalog.setval('travelers_id_seq', 4, true);
 -- Data for Name: trip; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (4, 2, 3, 4, '2013-02-26 21:09:24.506+02', 3, true, false, '
-');
 INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (3, 1, 1, 2, '2013-01-26 21:07:46.834+02', 3, true, false, ' ');
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (4, 2, 3, 4, '2013-02-26 21:09:24.506+02', 3, true, true, '
+');
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (8, 1, 9, 10, '2013-02-25 21:09:24.506+02', 3, false, true, '
+');
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (7, 2, 7, 8, '2013-02-24 21:09:24.506+02', 3, true, false, '
+');
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (6, 1, 5, 6, '2013-02-23 23:26:00.015971+02', 3, true, false, ' ');
 
 
 --
@@ -5459,7 +5464,7 @@ INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, sea
 -- Name: trip_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('trip_id_seq', 4, true);
+SELECT pg_catalog.setval('trip_id_seq', 6, true);
 
 
 --
@@ -5674,7 +5679,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2013-02-05 19:54:47 EET
+-- Completed on 2013-02-08 00:04:13 EET
 
 --
 -- PostgreSQL database dump complete

@@ -12,7 +12,7 @@
 
   </p>
 
-  <form action="" method="post">
+  <form action="list_all_trips.php" method="post">
 	  <table border="0">
 		 <tr>
 		   <td align="right">From Location:</td>
