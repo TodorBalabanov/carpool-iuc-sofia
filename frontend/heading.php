@@ -2,7 +2,7 @@
   <meta name="description" content="Internet based carpool system developed at International University College Sofia.">
   <meta name="abstract" content="Carpool from IUC Sofia">
   <meta http-equiv="Content-Language" content="en-us">
-  <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="author" content="IUC Sofia">
   <meta name="copyright" content="2012-2013 by IUC Sofia">
   <meta name="revisit-after" content="30 days">

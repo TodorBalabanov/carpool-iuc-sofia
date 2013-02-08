@@ -13,7 +13,7 @@
   </p>
 
 <?php
-  $link = pg_connect("host=localhost port=5432 dbname=carpool user=postgres password=postgres");
+  include( "db.php" );
   $result = pg_exec($link, "select * from trips_view");
 ?>
 
@@ -53,5 +53,10 @@
   pg_close($link);
 ?>
 
+  <form action="search_trip.php" method="post">
+    <input type="submit" value="Go Back">
+  </form>
+
 </body>
 </html>
+
