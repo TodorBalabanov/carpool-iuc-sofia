@@ -10,7 +10,7 @@
 
 <?php include 'navigation.php'; ?>
 
-  </p>
+  <p/>
 
   <!-- TODO Driver login is needed in order to post a trip! -->
   <form action="" method="post">

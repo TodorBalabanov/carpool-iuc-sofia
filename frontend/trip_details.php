@@ -10,7 +10,7 @@
 
 <?php include 'navigation.php'; ?>
 
-  </p>
+  <p/>
 
 <?php
   include( "db.php" );

@@ -10,7 +10,7 @@
 
 <?php include 'navigation.php'; ?>
 
-  </p>
+  <p/>
 
 Welcome to the Internet Based Carpool System developed at International University College Sofia.
 

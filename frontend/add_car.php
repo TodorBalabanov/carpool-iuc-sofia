@@ -10,7 +10,7 @@
 
 <?php include 'navigation.php'; ?>
 
-  </p>
+  <p/>
 
   <form action="" method="post">
 	  <table border="0">

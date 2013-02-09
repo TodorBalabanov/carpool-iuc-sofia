@@ -10,7 +10,7 @@
 
 <?php include 'navigation.php'; ?>
 
-  </p>
+  <p/>
 
 Internet based carpool system developed at International University College Sofia is part of education tutorials in few subjects as Multimedia, Databeses, Software Development and E-Business.
 

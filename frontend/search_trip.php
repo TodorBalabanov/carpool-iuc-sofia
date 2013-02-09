@@ -10,7 +10,7 @@
 
 <?php include 'navigation.php'; ?>
 
-  </p>
+  <p/>
 
   <form action="list_all_trips.php" method="post">
 	  <table border="0">
