@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.7
 -- Dumped by pg_dump version 9.1.7
--- Started on 2013-02-09 03:10:47 EET
+-- Started on 2013-02-09 19:02:38 EET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -33,7 +33,7 @@ SET search_path = public, pg_catalog;
 
 --
 -- TOC entry 194 (class 1255 OID 16520)
--- Dependencies: 6 554
+-- Dependencies: 554 6
 -- Name: add_car(integer, character varying, character varying, character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -71,7 +71,7 @@ ALTER FUNCTION public.add_car(arg_person_id integer, arg_brand character varying
 
 --
 -- TOC entry 195 (class 1255 OID 16521)
--- Dependencies: 554 6
+-- Dependencies: 6 554
 -- Name: add_person(character varying, character varying, character varying, character varying, character varying, character varying, character varying, boolean, boolean, boolean, text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -138,7 +138,7 @@ begin
 
 	select person_id into loc_person_id from driver where loc_driver_id = id;
 
-	insert into travelers(trip_id, person_id) values(loc_trip_id, loc_persion_id);
+	insert into travelers(trip_id, person_id) values(loc_trip_id, loc_person_id);
 
 	return true;
 end;
@@ -149,7 +149,7 @@ ALTER FUNCTION public.add_trip(arg_from character varying, arg_to character vary
 
 --
 -- TOC entry 197 (class 1255 OID 16667)
--- Dependencies: 6 554
+-- Dependencies: 554 6
 -- Name: sign_for_trip(integer, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -5455,6 +5455,8 @@ INSERT INTO travelers (id, trip_id, person_id) VALUES (19, 6, 19);
 INSERT INTO travelers (id, trip_id, person_id) VALUES (20, 7, 20);
 INSERT INTO travelers (id, trip_id, person_id) VALUES (21, 8, 20);
 INSERT INTO travelers (id, trip_id, person_id) VALUES (22, 4, 20);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (24, 15, 4);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (25, 16, 17);
 
 
 --
@@ -5463,7 +5465,7 @@ INSERT INTO travelers (id, trip_id, person_id) VALUES (22, 4, 20);
 -- Name: travelers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('travelers_id_seq', 23, true);
+SELECT pg_catalog.setval('travelers_id_seq', 26, true);
 
 
 --
@@ -5481,6 +5483,8 @@ INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, sea
 INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (8, 1, 9, 10, '2013-02-25 21:09:24.506+02', 3, false, true, '
 ');
 INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (9, 1, 11, 12, '2013-02-12 21:09:24.506+02', 2, false, true, 'Trip is only for smoking people!');
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (15, 1, 207, 40, '2013-02-19 18:05:44.143209+02', 3, false, true, '');
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (16, 7, 168, 186, '2013-02-10 18:59:20.559149+02', 2, true, false, '');
 
 
 --
@@ -5489,7 +5493,7 @@ INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, sea
 -- Name: trip_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('trip_id_seq', 6, true);
+SELECT pg_catalog.setval('trip_id_seq', 16, true);
 
 
 --
@@ -5614,7 +5618,7 @@ ALTER TABLE ONLY model
 
 --
 -- TOC entry 1995 (class 2606 OID 16610)
--- Dependencies: 178 164 1968 2017
+-- Dependencies: 164 178 1968 2017
 -- Name: car_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5714,7 +5718,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2013-02-09 03:10:49 EET
+-- Completed on 2013-02-09 19:02:41 EET
 
 --
 -- PostgreSQL database dump complete

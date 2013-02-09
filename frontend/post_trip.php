@@ -13,7 +13,7 @@
   <p/>
 
   <!-- TODO Driver login is needed in order to post a trip! -->
-  <form action="" method="post">
+  <form action="store_trip.php" method="post">
 	  <table border="0">
 		 <tr>
 		   <td align="right">From Location:</td>
@@ -25,37 +25,46 @@
 		 </tr>
 		 <tr>
 		   <td align="right">Car Registration:</td>
+         <!-- TODO Use dropdown list with cars for the logged in driver! --->
 		   <td><input type="text" size="30" name="car" id="car"/></td>
 		 </tr>
 		 <tr>
 		   <td align="right">Departure Date:</td>
-                   <!-- TODO Replace with calendar control! --->
+         <!-- TODO Replace with calendar control! --->
 		   <td><input type="text" size="30" name="date" id="date"/></td>
 		 </tr>
 		 <tr>
 		   <td align="right">Departure Time:</td>
-                   <!-- TODO Replace with clock control! --->
-		   <td><input type="text" size="30" name="time" id="time"/></td>
+         <!-- TODO Replace with clock control! --->
+<?php
+  include( "db.php" );
+  $result = pg_exec($link, "select now();");
+  $row = pg_fetch_array($result, 0);
+?>
+		   <td><input type="text" size="30" name="time" id="time" value="<?php echo($row[0]);?>"/></td>
+<?php
+  pg_close($link);
+?>
 		 </tr>
 		 <tr>
 		   <td align="right">Available Seats:</td>
-		   <td><input type="text" size="30" name="seats" id="seats"/></td>
+		   <td><input type="text" size="30" name="seats" id="seats" value="0"/></td>
 		 </tr>
 		 <tr>
 		   <td align="right">Trip Type:</td>
 		   <td>
-                   &nbsp;&nbsp;
-                   Free <input type="checkbox" value="yes" name="free" id="free"/>
-                   &nbsp;&nbsp;
-                   Paid <input type="checkbox" value="yes" name="paid" id="paid"/>
-                   </td>
+         &nbsp;&nbsp;
+         Free <input type="checkbox" value="yes" name="free" id="free"/>
+         &nbsp;&nbsp;
+         Paid <input type="checkbox" value="yes" name="paid" id="paid"/>
+         </td>
 		 </tr>
 		 <tr>
 		   <td align="right">Notes:</td>
 		   <td><textarea cols="25" rows="5" name="notes" id="notes"></textarea></td>
 		 </tr>
 	  </table>
-     <input type="submit" value="Post" name="post" id="post"/>
+     <input type="submit" value="Post Trip" name="post" id="post"/>
   </form>
 </body>
 </html>
