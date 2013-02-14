@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.8
 -- Dumped by pg_dump version 9.1.8
--- Started on 2013-02-14 02:05:09 EET
+-- Started on 2013-02-14 15:34:26 EET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -670,9 +670,9 @@ SELECT pg_catalog.setval('brand_id_seq', 3, true);
 -- Data for Name: car; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO car (id, model_id, driver_id, registration, color) VALUES (1, 1, 2, '00001', 0);
-INSERT INTO car (id, model_id, driver_id, registration, color) VALUES (2, 2, 4, '00002', 0);
-INSERT INTO car (id, model_id, driver_id, registration, color) VALUES (7, 1, 8, 'REG001', 0);
+INSERT INTO car (id, model_id, driver_id, registration, color) VALUES (1, 1, 1, 'REG0001', 0);
+INSERT INTO car (id, model_id, driver_id, registration, color) VALUES (2, 2, 2, 'REG0002', 0);
+INSERT INTO car (id, model_id, driver_id, registration, color) VALUES (3, 1, 3, 'REG0003', 0);
 
 
 --
@@ -690,12 +690,12 @@ SELECT pg_catalog.setval('car_id_seq', 7, true);
 -- Data for Name: driver; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO driver (id, license, person_id) VALUES (2, '0001', 4);
-INSERT INTO driver (id, license, person_id) VALUES (4, '0002', 7);
-INSERT INTO driver (id, license, person_id) VALUES (8, 'licid2', 17);
-INSERT INTO driver (id, license, person_id) VALUES (9, 'licid3', 18);
-INSERT INTO driver (id, license, person_id) VALUES (10, 'licid2', 20);
-INSERT INTO driver (id, license, person_id) VALUES (11, 'license5', 21);
+INSERT INTO driver (id, license, person_id) VALUES (1, 'L0001', 1);
+INSERT INTO driver (id, license, person_id) VALUES (2, 'L0002', 3);
+INSERT INTO driver (id, license, person_id) VALUES (3, 'L0003', 7);
+INSERT INTO driver (id, license, person_id) VALUES (4, 'L0004', 8);
+INSERT INTO driver (id, license, person_id) VALUES (5, 'L0005', 10);
+INSERT INTO driver (id, license, person_id) VALUES (6, 'L0006', 11);
 
 
 --
@@ -5414,13 +5414,13 @@ SELECT pg_catalog.setval('model_id_seq', 4, true);
 -- Data for Name: passenger; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO passenger (id, passport, person_id) VALUES (1, '0001', 6);
-INSERT INTO passenger (id, passport, person_id) VALUES (2, '0002', 9);
-INSERT INTO passenger (id, passport, person_id) VALUES (3, '0003', 11);
-INSERT INTO passenger (id, passport, person_id) VALUES (4, 'passid2', 17);
-INSERT INTO passenger (id, passport, person_id) VALUES (5, 'passid4', 19);
-INSERT INTO passenger (id, passport, person_id) VALUES (6, 'passid2', 20);
-INSERT INTO passenger (id, passport, person_id) VALUES (7, 'passport5', 21);
+INSERT INTO passenger (id, passport, person_id) VALUES (6, 'P0006', 10);
+INSERT INTO passenger (id, passport, person_id) VALUES (7, 'P0007', 11);
+INSERT INTO passenger (id, passport, person_id) VALUES (5, 'P0005', 9);
+INSERT INTO passenger (id, passport, person_id) VALUES (4, 'P0004', 7);
+INSERT INTO passenger (id, passport, person_id) VALUES (3, 'P0003', 5);
+INSERT INTO passenger (id, passport, person_id) VALUES (2, 'P0002', 4);
+INSERT INTO passenger (id, passport, person_id) VALUES (1, 'P0001', 2);
 
 
 --
@@ -5438,17 +5438,17 @@ SELECT pg_catalog.setval('passenger_id_seq', 7, true);
 -- Data for Name: person; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (4, 'Иван', 'Иванов', '0888555555', 'ivan1@abv.bg', 'pass1', true, ' ');
-INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (9, 'Петя', 'Петрова', '0878222141', 'petya@bil.com', 'pass4', false, ' ');
-INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (7, 'Георги', 'Георгиев', '0888666666', 'georgi@yahoo.com', 'pass3', false, ' ');
-INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (11, 'Лили', 'Тодорова', '0888996611', 'lily@abv.bg', 'pass5', true, ' ');
-INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (6, 'Петър', 'Петров', '0898222222', 'petar@abv.bg', 'pass2', true, ' ');
-INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (12, 'Десислава', 'Грънчарова', '0989666666', 'desi@abv.bg', 'pass6', false, ' ');
-INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (17, 'Игнат', 'Ковачки', '0887777777', 'ignat@abv.bg', 'pass7', true, ' ');
-INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (18, 'Симеон', 'Живков', '087333333', 'simo@abv.bg', 'pass8', false, ' ');
-INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (19, 'Агнес', 'Илиева', '0891233333', 'agnes@mail.bg', 'pass9', true, ' ');
-INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (20, 'Йордан', 'Йовчев', '08984444444', 'jordan@yahoo.com', 'pass10', false, ' ');
-INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (21, 'Дима', 'Стоилова', '0854999999', 'dima@gmail.com', 'pass11', true, ' ');
+INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (1, 'Иван', 'Иванов', '0880000001', 'user1@abv.bg', 'pass1', true, ' ');
+INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (2, 'Петър', 'Петров', '0880000002', 'user2@abv.bg', 'pass2', true, ' ');
+INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (3, 'Георги', 'Георгиев', '0880000003', 'user3@abv.bg', 'pass3', false, ' ');
+INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (4, 'Петя', 'Петрова', '0880000004', 'user4@abv.bg', 'pass4', false, ' ');
+INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (5, 'Лили', 'Тодорова', '0880000005', 'user5@abv.bg', 'pass5', true, ' ');
+INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (6, 'Десислава', 'Грънчарова', '0880000006', 'user6@abv.bg', 'pass6', false, ' ');
+INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (7, 'Игнат', 'Ковачки', '0880000007', 'user7@abv.bg', 'pass7', true, ' ');
+INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (8, 'Симеон', 'Живков', '0880000008', 'user8@abv.bg', 'pass8', false, ' ');
+INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (9, 'Агнес', 'Илиева', '0880000009', 'user9@abv.bg', 'pass9', true, ' ');
+INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (10, 'Йордан', 'Йовчев', '0880000010', 'user10@abv.bg', 'pass10', false, ' ');
+INSERT INTO person (id, first_name, last_name, phone, email, password, smoker, notes) VALUES (11, 'Дима', 'Стоилова', '0880000011', 'user11@abv.bg', 'pass11', true, ' ');
 
 
 --
@@ -5466,26 +5466,27 @@ SELECT pg_catalog.setval('person_id_seq', 21, true);
 -- Data for Name: travelers; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO travelers (id, trip_id, person_id) VALUES (1, 3, 4);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (2, 3, 6);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (3, 4, 7);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (4, 4, 9);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (5, 6, 4);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (6, 7, 7);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (7, 8, 4);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (8, 9, 4);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (9, 9, 9);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (14, 9, 11);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (17, 6, 21);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (18, 6, 20);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (19, 6, 19);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (20, 7, 20);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (21, 8, 20);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (22, 4, 20);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (24, 15, 4);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (25, 16, 17);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (27, 8, 6);
-INSERT INTO travelers (id, trip_id, person_id) VALUES (28, 7, 6);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (8, 6, 1);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (9, 6, 4);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (10, 6, 5);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (17, 7, 1);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (18, 8, 7);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (29, 18, 1);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (1, 1, 1);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (2, 1, 2);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (3, 2, 3);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (4, 2, 4);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (16, 2, 10);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (5, 3, 1);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (11, 3, 11);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (12, 3, 10);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (13, 3, 9);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (6, 4, 3);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (14, 4, 10);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (20, 4, 2);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (7, 5, 1);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (15, 5, 10);
+INSERT INTO travelers (id, trip_id, person_id) VALUES (19, 5, 2);
 
 
 --
@@ -5494,7 +5495,7 @@ INSERT INTO travelers (id, trip_id, person_id) VALUES (28, 7, 6);
 -- Name: travelers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('travelers_id_seq', 28, true);
+SELECT pg_catalog.setval('travelers_id_seq', 29, true);
 
 
 --
@@ -5503,17 +5504,18 @@ SELECT pg_catalog.setval('travelers_id_seq', 28, true);
 -- Data for Name: trip; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (3, 1, 1, 2, '2013-01-26 21:07:46.834+02', 3, true, false, ' ');
-INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (4, 2, 3, 4, '2013-02-26 21:09:24.506+02', 3, true, true, '
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (1, 1, 1, 2, '2013-01-26 21:07:46.834+02', 3, true, false, ' ');
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (2, 2, 3, 4, '2013-02-26 21:09:24.506+02', 3, true, true, '
 ');
-INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (7, 2, 7, 8, '2013-02-24 21:09:24.506+02', 3, true, false, '
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (3, 1, 5, 6, '2013-02-23 23:26:00.015971+02', 3, true, false, ' ');
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (4, 2, 7, 8, '2013-02-24 21:09:24.506+02', 3, true, false, '
 ');
-INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (6, 1, 5, 6, '2013-02-23 23:26:00.015971+02', 3, true, false, ' ');
-INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (8, 1, 9, 10, '2013-02-25 21:09:24.506+02', 3, false, true, '
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (5, 1, 9, 10, '2013-02-25 21:09:24.506+02', 3, false, true, '
 ');
-INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (9, 1, 11, 12, '2013-02-12 21:09:24.506+02', 2, false, true, 'Trip is only for smoking people!');
-INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (15, 1, 207, 40, '2013-02-19 18:05:44.143209+02', 3, false, true, '');
-INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (16, 7, 168, 186, '2013-02-10 18:59:20.559149+02', 2, true, false, '');
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (6, 1, 11, 12, '2013-02-12 21:09:24.506+02', 2, false, true, 'Trip is only for smoking people!');
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (7, 1, 207, 40, '2013-02-19 18:05:44.143209+02', 3, false, true, ' ');
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (8, 3, 168, 186, '2013-02-10 18:59:20.559149+02', 2, true, false, ' ');
+INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, seats, free, paid, notes) VALUES (18, 1, 124, 1356, '2013-02-15 15:31:20.723121+02', 3, true, false, '');
 
 
 --
@@ -5522,7 +5524,7 @@ INSERT INTO trip (id, car_id, start_location_id, end_location_id, departure, sea
 -- Name: trip_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('trip_id_seq', 17, true);
+SELECT pg_catalog.setval('trip_id_seq', 18, true);
 
 
 --
@@ -5747,7 +5749,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2013-02-14 02:05:11 EET
+-- Completed on 2013-02-14 15:34:28 EET
 
 --
 -- PostgreSQL database dump complete

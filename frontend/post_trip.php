@@ -26,7 +26,21 @@
 		 <tr>
 		   <td align="right">Car Registration:</td>
          <!-- TODO Use dropdown list with cars for the logged in driver! --->
-		   <td><input type="text" size="30" name="car" id="car"/></td>
+		   <td><select name="car" id="car">
+<?php
+  if( isset($_SESSION['driver_id']) ) {
+    include( "db.php" );
+    $result = pg_exec($link, "select registration from car where driver_id = ".intval($_SESSION['driver_id']).";");
+
+    for($i=0; $i<pg_numrows($result); $i++) {
+      $row = pg_fetch_array($result, $i);
+      echo('<option value="'.$row[0].'">'.$row[0].'</option>');
+    }
+
+    pg_close($link);
+  }
+?>
+         </select></td>
 		 </tr>
 		 <tr>
 		   <td align="right">Departure Date:</td>
@@ -68,3 +82,4 @@
   </form>
 </body>
 </html>
+
