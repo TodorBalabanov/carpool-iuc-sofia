@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
   <meta name="keywords" content="car pool carpool Sofia Bulgaria IUC International University College">
   <meta name="description" content="Internet based carpool system developed at International University College Sofia.">
   <meta name="abstract" content="Carpool from IUC Sofia">

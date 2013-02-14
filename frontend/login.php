@@ -12,7 +12,7 @@
 
   <p/>
 
-  <form action="" method="post">
+  <form action="index.php" method="post">
 	  <table border="0">
 		 <tr>
 		   <td align="right">Email:</td>
@@ -27,3 +27,4 @@
   </form>
 </body>
 </html>
+
