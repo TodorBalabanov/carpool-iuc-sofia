@@ -10,11 +10,44 @@
 
 <?php include 'navigation.php'; ?>
 
-  <p/	>
+  <p/>
 
 <?php
+  if( !isset($_POST['free']) ) {
+    $_POST['free'] = 'FALSE';
+  } else {
+    $_POST['free'] = 'TRUE';
+  }
+
+  if( !isset($_POST['paid']) ) {
+    $_POST['paid'] = 'FALSE';
+  } else {
+    $_POST['paid'] = 'TRUE';
+  }
+
+  $options = '';
+  if( isset($_POST['from']) && $_POST['from']!='' ) {
+    $options .= " start_location = '" . $_POST['from'] . "'";
+  }
+  if( isset($_POST['to']) && $_POST['to']!='' ) {
+    if($options != '') {
+      $options .= ' and ';
+    }
+    $options .= " end_location = '" . $_POST['to'] . "'";
+  }
+
+  if($options != '') {
+    $options .= ' and ';
+  }
+
+  $options .= " (free=" . $_POST['free'] . " or paid=" . $_POST['paid'] . ") ";
+
+  if($options != '') {
+    $options = 'where ' . $options;
+  }
+
   include( "db.php" );
-  $result = pg_exec($link, "select * from trips_view");
+  $result = pg_exec($link, "select * from trips_view ".$options);
 ?>
 
 <!-- List of trips tables.  -->
@@ -28,6 +61,7 @@
       <th>Departure Time</th>
       <th>Available Seats</th>
       <th>Type</th>
+      <th>Select</th>
     </tr>
 <?php
   for($i=0; $i<pg_numrows($result); $i++) {
@@ -42,6 +76,7 @@
       <td><a href="trip_details.php?id=<?php echo($row[0]);?>"><?php echo($row[6]);?></a></td>
       <td><?php echo($row[7]);?></td>
       <td><?php echo(($row[8]=='t'?'F':'').($row[9]=='t'?'P':''));?></td>
+      <td><table><tr><td><input type="submit" value="Join"></td><td><input type="submit" value="Remove"></td></tr></table></td>
     </tr>
 <?php
   }

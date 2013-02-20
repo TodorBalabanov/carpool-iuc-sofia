@@ -91,12 +91,26 @@
   pg_close($link);
 ?>
 
-  <form name="sign_for_trip" id="sign_for_trip" action="sign_for_trip.php" method="post">
-    <input type="hidden" name="trip_id" id="trip_id" value="<?php echo(intval($_GET['id']));?>">
-    <!-- TODO Add person information according login data. -->
-    <input type="hidden" name="person_id" id="person_id" value="">
-    <input type="submit" value="Sign For This Trip" name="submit" id="submit">
-  </form>
+  <table border="0">
+  <tr>
+    <td><form name="sign_for_trip" id="sign_for_trip" action="sign_for_trip.php" method="post">
+      <input type="hidden" name="trip_id" id="trip_id" value="<?php echo(intval($_GET['id']));?>">
+      <!-- TODO Add person information according login data. -->
+      <input type="hidden" name="person_id" id="person_id" value="">
+      <input type="submit" value="Join Trip" name="join" id="join">
+    </form></td>
+
+    <td><form name="edit_trip" id="edit_trip" action="" >
+      <input type="hidden" name="trip_id" id="trip_id" value="<?php echo(intval($_GET['id']));?>">
+      <input type="submit" value="Edit Trip" name="edit" id="edit"/>
+    </form></td>
+
+    <td><form name="remove_from_trip" id="remove_from_trip" action="" >
+      <input type="hidden" name="trip_id" id="trip_id" value="<?php echo(intval($_GET['id']));?>">
+      <input type="submit" value="Delete Trip" name="delete" id="delete"/>
+    </form></td>
+  </tr>
+  </table>
 
 </body>
 </html>

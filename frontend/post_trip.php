@@ -30,11 +30,11 @@
 <?php
   if( isset($_SESSION['driver_id']) ) {
     include( "db.php" );
-    $result = pg_exec($link, "select registration from car where driver_id = ".intval($_SESSION['driver_id']).";");
+    $result = pg_exec($link, "select car.registration, brand.name, model.name from car, brand, model where car.model_id = model.id and model.brand_id = brand.id and driver_id = ".intval($_SESSION['driver_id']).";");
 
     for($i=0; $i<pg_numrows($result); $i++) {
       $row = pg_fetch_array($result, $i);
-      echo('<option value="'.$row[0].'">'.$row[0].'</option>');
+      echo('<option value="'.$row[0].'">'.$row[0].' '.$row[1].' '.$row[2].'</option>\n');
     }
 
     pg_close($link);
@@ -68,7 +68,7 @@
 		   <td align="right">Trip Type:</td>
 		   <td>
          &nbsp;&nbsp;
-         Free <input type="checkbox" value="yes" name="free" id="free"/>
+         Free <input type="checkbox" value="yes" name="free" id="free" checked="yes"/>
          &nbsp;&nbsp;
          Paid <input type="checkbox" value="yes" name="paid" id="paid"/>
          </td>
