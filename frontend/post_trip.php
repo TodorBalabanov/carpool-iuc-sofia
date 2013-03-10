@@ -39,11 +39,35 @@
 	  <table border="0">
 		 <tr>
 		   <td align="right">From Location:</td>
-		   <td><input type="text" size="30" name="from" id="from"/></td>
+         <td><select name="from" id="from">
+<?php
+  include( "db.php" );
+  $result = pg_exec($link, "select name, area from location order by name, area;");
+
+  for($i=0; $i<pg_numrows($result); $i++) {
+    $row = pg_fetch_array($result, $i);
+    echo('<option value="'.$row[0].'">'.$row[0].' ('.$row[1].')</option>');
+  }
+
+  pg_close($link);
+?>
+         </select></td>
 		 </tr>
 		 <tr>
 		   <td align="right">To Location:</td>
-		   <td><input type="text" size="30" name="to" id="to"/></td>
+         <td><select name="to" id="to">
+<?php
+  include( "db.php" );
+  $result = pg_exec($link, "select name, area from location order by name, area;");
+
+  for($i=0; $i<pg_numrows($result); $i++) {
+    $row = pg_fetch_array($result, $i);
+    echo('<option value="'.$row[0].'">'.$row[0].' ('.$row[1].')</option>');
+  }
+
+  pg_close($link);
+?>
+         </select></td>
 		 </tr>
 		 <tr>
 		   <td align="right">Car Registration:</td>
@@ -64,14 +88,14 @@
 ?>
          </select></td>
 		 </tr>
-		 <tr>
+       <!-- TODO Replace with calendar control! --->
+		 <!-- <tr>
 		   <td align="right">Departure Date:</td>
-         <!-- TODO Replace with calendar control! --->
 		   <td><input type="text" size="30" name="date" id="date"/></td>
-		 </tr>
+		 </tr> -->
+       <!-- TODO Replace with clock control! --->
 		 <tr>
 		   <td align="right">Departure Time:</td>
-         <!-- TODO Replace with clock control! --->
 <?php
   include( "db.php" );
   $result = pg_exec($link, "select now();");
@@ -84,7 +108,8 @@
 		 </tr>
 		 <tr>
 		   <td align="right">Available Seats:</td>
-		   <td><input type="text" size="30" name="seats" id="seats" value="0"/></td>
+		   <td><select name="seats" id="seats"><option value=0>0</option><option value=1>1</option><option value=2>2</option><option value=3>3</option><option value=4>4</option><option value=5>5</option><option value=6>6</option><option value=7>7</option><option value=8>8</option>
+</select></td>
 		 </tr>
 		 <tr>
 		   <td align="right">Trip Type:</td>

@@ -38,7 +38,18 @@
 	  <table border="0">
 		 <tr>
 		   <td align="right">Brand:</td>
-		   <td><input type="text" size="40" name="brand" id="brand"/></td>
+		   <td><select name="brand" id="brand">
+<?php
+  include( "db.php" );
+  $result = pg_exec($link, "select name from brand order by name;");
+
+  for($i=0; $i<pg_numrows($result); $i++) {
+    $row = pg_fetch_array($result, $i);
+    echo('<option value="' . $row[0] . '">' . $row[0] . '</option>');
+  }
+  pg_close($link);
+?>
+         </select></td>
 		 </tr>
 		 <tr>
 		   <td align="right">Model:</td>
@@ -50,9 +61,12 @@
 		 </tr>
 		 <tr>
 		   <td align="right">Color:</td>
-		   <td><input type="text" size="40" name="color" id="color"/></td>
+         <script type="text/javascript" src="/jscolor/jscolor.js"></script>
+		   <td><input class="color" name="color" id="color"></td>
 		 </tr>
 	  </table>
      <input type="submit" value="Add" name="add" id="add"/>
+  </form>
 </body>
 </html>
+
