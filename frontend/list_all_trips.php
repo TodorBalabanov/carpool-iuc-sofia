@@ -98,7 +98,7 @@
       <td><a href="trip_details.php?id=<?php echo($row[0]);?>"><?php echo($row[6]);?></a></td>
       <td><?php echo($row[7]);?></td>
       <td><?php echo(($row[8]=='t'?'F':'').($row[9]=='t'?'P':''));?></td>
-      <td><table><tr><td><input type="submit" value="Join"></td><td><input type="submit" value="Remove"></td></tr></table></td>
+      <td><table><tr><td><form action="sign_for_trip.php" method="post"><input type="hidden" name="trip_id" value="<?php echo($row[0]);?>"><input type="submit" value="Join"></form></td><td><input type="submit" value="Remove"></td></tr></table></td>
     </tr>
 <?php
   }

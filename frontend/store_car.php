@@ -35,7 +35,7 @@
 
 <?php
   include( "db.php" );
-  $result = pg_exec($link, "select add_car('".intval($_SESSION['person_id'])."', '".$_POST["brand"]."', '".$_POST["model"]."', '".$_POST["registration"]."', '".intval($_POST["color"])."');");
+  $result = pg_exec($link, "select add_car('".intval($_SESSION['person_id'])."', '".$_POST["brand"]."', '".$_POST["model"]."', '".$_POST["registration"]."', '".intval($_POST["color"],16)."');");
 
   if(pg_numrows($result) > 0) {
     $row = pg_fetch_array($result, 0);
