@@ -25,6 +25,31 @@
 <head>
 <?php include 'heading.php'; ?>
   <title>.:: Carpool IUC Sofia - Add Car ::.</title>
+
+  <script language="JavaScript1.2">
+    var models;
+<?php
+  include( "db.php" );
+  $result = pg_exec($link, "select brand.name, model.name from model, brand where brand.id=model.brand_id;");
+
+  echo("\r\n");
+  for($i=0; $i<pg_numrows($result); $i++) {
+    $row = pg_fetch_array($result, $i);
+    echo('models['.$i.'][0] = \'' . $row[0] . '\';');
+    echo("\t");
+    echo('models['.$i.'][1] = \'' . $row[1] . '\';');
+    echo("\r\n");
+  }
+  pg_close($link);
+?>
+
+    function reloadModels() {
+      var index = document.forms[0].brand.selectedIndex;
+      var brand = document.forms[0].brand[ index ].value;
+
+      document.forms[0].registration.value = brand;
+    }
+  </script>
 </head>
 
 <body>
@@ -34,11 +59,12 @@
 
   <p/>
 
-  <form action="store_car.php" method="post">
+  <form name="store_car" id="store_car" action="store_car.php" method="post">
 	  <table border="0">
 		 <tr>
 		   <td align="right">Brand:</td>
-		   <td><select name="brand" id="brand">
+		   <td><select name="brand" id="brand" onChange="reloadModels();">
+           <option value="">-</option>
 <?php
   include( "db.php" );
   $result = pg_exec($link, "select name from brand order by name;");
@@ -53,11 +79,13 @@
 		 </tr>
 		 <tr>
 		   <td align="right">Model:</td>
-		   <td><input type="text" size="40" name="model" id="model"/></td>
+		   <td><select name="model" id="model">
+           <option value="">-</option>
+         </select></td>
 		 </tr>
 		 <tr>
 		   <td align="right">Registration:</td>
-		   <td><input type="text" size="40" name="registration" id="registration"/></td>
+		   <td><input type="text" size="20" name="registration" id="registration"/></td>
 		 </tr>
 		 <tr>
 		   <td align="right">Color:</td>
