@@ -1,0 +1,1 @@
+Carpool is very popular way to travel by sharing your car. This project is related to creating such Internet based platform for people willing to share their trips.
